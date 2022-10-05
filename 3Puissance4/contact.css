@@ -1,0 +1,159 @@
+* {
+    margin: 0 auto;
+}
+
+body header div h1 {
+    color: white;
+    font-size: large;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+} 
+
+body header div nav a {
+    margin: 10px;
+    color: white;
+    font-size: small;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.flexNav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background:rgb(19, 16, 46);
+    height: 90px;
+    width: 100%;
+    
+}
+
+.flexBody{
+
+    height: auto;
+    width: 100%;
+    background:rgb(12, 130, 162);
+    height: 800px;
+    width: 100%;
+    
+}
+
+.flexFooter{
+
+    display: flex;
+    align-items: center;
+    background:rgba(13,11,38,255);
+    height: 350px;
+    width: 100%;
+    
+}
+
+.blockG {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+}
+
+.blockG i{
+    color: rgb(117, 114, 134);
+    font-weight: normal;
+    width: 50%;
+    font-style: normal;
+    
+}
+
+.titreG {
+    color: white;
+    font-size: medium;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.orange_text {
+    color: orange;
+    font-size: small;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+} 
+
+.blockD{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+}
+
+.titreD {
+    color: white;
+    font-size: medium;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.blockD a {
+    display: flex;
+    width: 50;
+    color: rgb(117, 114, 134);
+    text-decoration: None;
+    font-size: small;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.blockD li {
+    color:orange;
+
+}
+
+
+body div p {
+    color: rgb(117, 114, 134);
+    font-size: small;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-left: 10%;
+} 
+
+
+html,body{
+    height:100%;
+}
+
+body{
+    height: 4000px;
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+    margin:0;
+    padding:0;
+    background: url("https://wallpaperaccess.com/full/1615368.jpg"),url("assets/milli.jpg");
+    background-repeat:no-repeat, no-repeat;
+    background-color: rgba(13,11,38,255);
+    -webkit-background-size:cover;
+    background-size:2000px, 2000px;
+}
+.title{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    height:450px;
+    text-align: center;
+    padding-top: 200px;
+    margin: 25px 0;
+    font-size: 18px;
+    color: rgb(156, 149, 149);
+}
+    .title .titre{
+    margin: 25px 0;
+    font-size: 60px;
+    color: white;
+    font-weight: bold;
+}
+
+.info{
+    display: flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items: stretch;
+    width:250px ;
+    height:150px ;
+    margin: 10px 0;
+    text-align: center;
+    padding-top: 100px;
+    padding-left: 150px;
+}
