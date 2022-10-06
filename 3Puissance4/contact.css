@@ -1,11 +1,19 @@
+/*--PARAMETRES GENERAUX--*/
+
 * {
     margin: 0 auto;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+body{
+    background-color:rgb(17, 16, 47)
+}
+
+/*--HEADER--*/
 
 body header div h1 {
     color: white;
     font-size: large;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 } 
 
 body header div nav a {
@@ -14,8 +22,12 @@ body header div nav a {
     font-size: small;
     font-weight: bold;
     text-decoration: none;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+body header div nav a:hover {
+    color: #bd5ef6;
+}
+
 
 .flexNav{
     display: flex;
@@ -26,78 +38,120 @@ body header div nav a {
     width: 100%;
     
 }
-
-.flexBody{
-
-    height: auto;
-    width: 100%;
-    background:rgb(12, 130, 162);
-    height: 800px;
-    width: 100%;
-    
-}
-
-.flexFooter{
-
+.flexBody01{
+    background: url(https://wallpaperaccess.com/full/1615368.jpg);
     display: flex;
     align-items: center;
-    background:rgba(13,11,38,255);
-    height: 350px;
+    height: 150px;
     width: 100%;
-    
+
 }
 
-.blockG {
+.texte_espace{
+    font-size:xx-large;
+}
+
+.flexBody02{
     display: flex;
-    width: 50%;
-    flex-direction: column;
+    justify-content:left;
+    height: 950px;
+    padding-right: 40%;
+    background-color: rgb(19, 16, 46);
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+  form {
+    margin-top: 200px;
+    background-color: rgb(19, 16, 46);
+    width: 100%;
+    margin-left: 12%;
 }
 
-.blockG i{
-    color: rgb(117, 114, 134);
-    font-weight: normal;
-    width: 50%;
-    font-style: normal;
+.titre_form {
+    display: flex;
+    color: white;
+    margin-left: 2%;
     
 }
 
-.titreG {
+body .flexBody02 form h1{
     color: white;
+    
+  }
+
+  form .inputs div{
+    display: flex;
+    width: 620px;
+    
+  }
+
+form .inputs input
+  
+  form .inputs input, [type='text'],[type='email']{
+    width: 1200px;
+    height: 80px;
+    padding: 15px;
+    border:none;
+    border-radius: 5px;
+    background-color: #221f49;
+    outline:none;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    justify-content:center;
     font-size: medium;
+
+  }
+
+  form p.inscription{
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #878787;
+  }
+  form p.inscription span{
+    color: #bd5ef6;
+  }
+  form button{
+    display: flex;
+    padding: 25px 50px;
+    border-radius: 5px;
+    border:none;
+    font-size: 15px;
+    color: #fff;
+    background-color: #bd5ef6;
+    outline:none;
+    cursor:pointer;
+    justify-content: center;
+    align-items: center;
+    margin-left: 60%;
+  }
+
+
+.img 
+.boutonco {
+    font-size: medium;
+    color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+.boutonConnexion {
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    background-color: #bd5ef6;
+    width: 20%;
+    height: 10%;
+    border-radius: 2px;
+}
 
-.orange_text {
-    color: orange;
-    font-size: small;
+body div h1 {
+    color: white;
+    font-size: x-large;
     font-weight: bold;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-} 
-
-.blockD{
-    display: flex;
-    width: 50%;
-    flex-direction: column;
 }
 
-.titreD {
-    color: white;
-    font-size: medium;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.blockD a {
-    display: flex;
-    width: 50;
-    color: rgb(117, 114, 134);
-    text-decoration: None;
-    font-size: small;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.blockD li {
-    color:orange;
-
+.connexion {
+   font-size: xx-large;
+   letter-spacing: 5px;
 }
 
 
@@ -106,54 +160,92 @@ body div p {
     font-size: small;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin-left: 10%;
+}
+.icon {
+    padding-top: 100px;
+    display: flex;
+    justify-content:space-between;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+    color:rgb(117, 114, 134);
 } 
-
-
-html,body{
-    height:100%;
-}
-
-body{
-    height: 4000px;
-    color: white;
-    font-family:Verdana, Geneva, Tahoma, sans-serif ;
-    margin:0;
-    padding:0;
-    background: url("https://wallpaperaccess.com/full/1615368.jpg"),url("assets/milli.jpg");
-    background-repeat:no-repeat, no-repeat;
+.icon div{
+    height:250px ;
+    width:30% ;
     background-color: rgba(13,11,38,255);
-    -webkit-background-size:cover;
-    background-size:2000px, 2000px;
 }
-.title{
+
+/*--FOOTER--*/
+
+footer {
+    display: flex;
+    flex-direction: row;
+    font-size: small ;
+    color: white;
+    padding-top: 75px;
+    background-color: #0D0B26;
+    font-family: 'Roboto', sans-serif;
+}
+
+footer h1 {
+    margin-bottom: 25px;
+    color: #FFFFFF;
+}
+
+footer h2 {
+    color: darkgray;
+    font-size: small;
+}
+
+
+/*--FOOTER COTE GAUCHE--*/
+
+
+.information_footer p {
+    text-align: start;
+    margin-left: 0px;
+
+}
+.information_liste_footer {
+    
     display: flex;
     flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    height:450px;
-    text-align: center;
-    padding-top: 200px;
-    margin: 25px 0;
-    font-size: 18px;
-    color: rgb(156, 149, 149);
-}
-    .title .titre{
-    margin: 25px 0;
-    font-size: 60px;
-    color: white;
-    font-weight: bold;
+    justify-content: start;
+    
+    
+    margin-bottom: 25px;
+    
+    list-style-type: none;
 }
 
-.info{
-    display: flex;
-    flex-direction:column;
-    flex-wrap: wrap;
-    justify-content:space-between;
-    align-items: stretch;
-    width:250px ;
-    height:150px ;
-    margin: 10px 0;
-    text-align: center;
-    padding-top: 100px;
-    padding-left: 150px;
+img{
+    flex-direction: row;
+    width: 30px;
+    height: 30px;
+}
+.information_footer h2 span{
+    color: #bd5ef6;
+
+}
+
+/*--COPYRIGHT--*/
+
+.copyright_footer {
+    margin-top: 100px;
+    margin-bottom: 25px;
+
+    color: darkgray;
+}
+
+/*--FOOTER COTE DROIT--*/
+
+
+.power_footer h2 a {
+    text-decoration: none;
+    color: #878787;
+}
+
+.power_footer h2 span{
+    color: #bd5ef6;
 }
