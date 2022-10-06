@@ -58,9 +58,8 @@ body header div nav a:hover {
 .flexBody02{
     display: flex;
     justify-content:left;
-    height: 500px;
-    padding-right: 30%;
-    align-items: center;
+    height: 950px;
+    padding-right: 40%;
     background-color: rgb(19, 16, 46);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
@@ -69,23 +68,20 @@ body header div nav a:hover {
     margin-top: 20px;
     background-color: rgb(19, 16, 46);
     width: 450px;
-    justify-content: left;
   }
 body .flexBody02 form h1{
     color: #bd5ef6;
-    text-align:center;
+    
   }
 
   form .inputs div{
     display: flex;
-    flex-direction:row;
     width: 620px;
     
   }
 form .inputs input
   
   form .inputs input, [type='nom'],[type='email'],[type='sujet'],[type='message']{
-    float: left;
     width: 1200px;
     height: 100px;
     padding: 15px;
@@ -95,6 +91,39 @@ form .inputs input
     outline:none;
     margin-bottom: 15px;
     margin-left: 15px;
+    justify-content:center;
+    
+  }
+  form .inputs [type='nom'][type='email']{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 550px;
+    height: 100px;
+    padding: 15px;
+    border:none;
+    border-radius: 5px;
+    background-color: #221f49;
+    outline:none;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    justify-content:center;
+
+  }
+
+
+
+  form .inputs [type='message']{
+    width: 1200px;
+    height: 300px;
+    padding: 15px;
+    border:none;
+    border-radius: 5px;
+    background-color: #221f49;
+    outline:none;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    justify-content:center;
     
   }
 
@@ -116,6 +145,8 @@ form .inputs input
     background-color: #bd5ef6;
     outline:none;
     cursor:pointer;
+    padding-right: 225px;
+    padding-left: 135px;
   }
 
 
