@@ -204,7 +204,7 @@ body{
 .hade .box1{
     font-size: 15px;
     width:24% ;
-    height: 50%;
+    height: 48%;
     color: white;
     background-color:green ;
     text-align:center;
@@ -212,7 +212,7 @@ body{
 .hade .box2{
     font-size: 15px;
     width:24% ;
-    height: 50%;
+    height: 48%;
     color: white;
     background-color:orange ;
     text-align:center;
@@ -220,7 +220,7 @@ body{
 .hade .box3{
     font-size: 15px;
     width:24% ;
-    height: 50%;
+    height: 48%;
     color: white;
     background-color:blue ;
     text-align:center;
@@ -228,7 +228,7 @@ body{
 .hade .box4{
     font-size: 15px;
     width:24% ;
-    height: 50%;
+    height: 48%;
     color: white;
     background-color:purple;
     text-align:center;
@@ -242,17 +242,17 @@ body{
 
 .equipe{
     display: flex;
-    flex-direction:column;
+    flex-direction:row;
     flex-wrap: wrap;
     justify-content:space-between;
     align-items: stretch;
     width:90% ;
-    height:50% ;
+    height:25% ;
     margin: 5%, 0;
     text-align: center;
     padding-top: 100px;
     padding-left: 1%;
-    padding-bottom: 250px;
+    padding-bottom: 250px
 }
 
 .equipe img{
@@ -262,8 +262,11 @@ body{
 
 .equipe div{
     background-color: rgba(13,11,38,255);
-    width: 32%;
+    width: 22%;
     height:auto;
+    margin-top: 15px;
+    padding-top: 100px;
+    padding-bottom: 25px;
 }
 
 .title{
