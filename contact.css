@@ -58,7 +58,7 @@ body header div nav a:hover {
 .flexBody02{
     display: flex;
     justify-content:left;
-    height: 950px;
+    height: 100%;
     padding-right: 40%;
     background-color: rgb(19, 16, 46);
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -67,7 +67,7 @@ body header div nav a:hover {
   form {
     margin-top: 20px;
     background-color: rgb(19, 16, 46);
-    width: 450px;
+    width: 85%;
   }
 body .flexBody02 form h1{
     color: #bd5ef6;
@@ -76,13 +76,13 @@ body .flexBody02 form h1{
 
   form .inputs div{
     display: flex;
-    width: 620px;
+    width: 80%;
     
   }
 form .inputs input
   
   form .inputs input, [type='nom'],[type='email'],[type='sujet'],[type='message']{
-    width: 1200px;
+    width: 170%;
     height: 100px;
     padding: 15px;
     border:none;
@@ -98,7 +98,7 @@ form .inputs input
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 550px;
+    width: 170%;
     height: 100px;
     padding: 15px;
     border:none;
@@ -114,7 +114,7 @@ form .inputs input
 
 
   form .inputs [type='message']{
-    width: 1200px;
+    width: 170%;
     height: 300px;
     padding: 15px;
     border:none;
@@ -136,17 +136,18 @@ form .inputs input
     color: #bd5ef6;
   }
   form button{
-    display: flex;
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
     padding: 25px 50px;
     border-radius: 5px;
-    border:none;
     font-size: 15px;
     color: #fff;
     background-color: #bd5ef6;
     outline:none;
-    cursor:pointer;
-    padding-right: 225px;
-    padding-left: 135px;
+    padding-left:15% ;
+    padding-right: 15% ;
+    margin-left: 65%;
   }
 
 
@@ -157,12 +158,11 @@ form .inputs input
 }
 .boutonConnexion {
     display: flex;
-    justify-content: left;
-    flex-direction: column;
     background-color: #bd5ef6;
     width: 20%;
     height: 10%;
     border-radius: 2px;
+    align-items: center;
 }
 
 body div h1 {
