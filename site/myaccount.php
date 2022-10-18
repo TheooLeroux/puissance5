@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tableau des scores</title>
-    <link rel="stylesheet" href="assets/Css/scores.css">
+    <title>Mon Espace</title>
+    <link rel="stylesheet" href="assets/Css/myaccount.css">
 </head>
 
 <body>
@@ -17,17 +17,17 @@
 
         <div class="flexNav">
             <div>
-                <p><img class="logo"
+                <p><img class="logo02"
                         src="https://media.discordapp.net/attachments/301039123160891402/1028264022467956766/LOGO.png"
                         alt=""></p>
             </div>
             <div>
                 <nav>
-                    <a href="index.html">ACCUEIL</a>
-                    <a href="register.html">JEU</a>
-                    <a href="scores.html">SCORES</a>
-                    <a href="contact.html">NOUS CONTACTER</a>
-                    <a href="myaccount.html"><img src="https://www.pngfind.com/pngs/b/110-1102927_profile-icon-png.png"
+                    <a href="index.php">ACCUEIL</a>
+                    <a href="register.php">JEU</a>
+                    <a href="scores.php">SCORES</a>
+                    <a href="contact.php">NOUS CONTACTER</a>
+                    <a href="myaccount.php"><img src="https://www.pngfind.com/pngs/b/110-1102927_profile-icon-png.png"
                             alt=""></a>
                 </nav>
             </div>
@@ -38,67 +38,65 @@
     <!-- FIN CODE HEADER -->
 
 
+
     <!-- BANNIERE -->
 
     <div class="flexBody01">
-        <h1 class="connexion">TABLEAU DES SCORES</h1>
+        <h1 class="connexion">MON ESPACE</h1>
     </div>
 
     <!-- FORMULAIRE -->
 
     <div class="flexBody02">
 
-        <table class="tableau">
-            <thead>
-                <tr>
-                    <th>Nom du jeu</th>
-                    <th>Nom du joueur</th>
-                    <th>Niveau de difficulté</th>
-                    <th>Score</th>
-                    <th>Date/heure</th>
-                </tr>
-            </thead>
+        <form>
 
+            <p class="texte_espace">ㅤ</p>
+            <h1>Modifier votre email</h1>
+            <p class="texte_espace">ㅤ </p>
 
-            <tbody>
-                <tr>
-                    <td>.......</td>
-                    <td>.......</td>
-                    <td>.......</td>
-                    <td>.......</td>
-                    <td>.......</td>
-                </tr>
-                <tr>
-                    <td>.......</td>
-                    <td>.......</td>
-                    <td>.......</td>
-                    <td>.......</td>
-                    <td>.......</td>
-                </tr>
-                <tr>
-                    <td>.......</td>
-                    <td>.......</td>
-                    <td>.......</td>
-                    <td>.......</td>
-                    <td>.......</td>
-                </tr>
-                <tr>
-                    <td>.......</td>
-                    <td>.......</td>
-                    <td>.......</td>
-                    <td>.......</td>
-                    <td>.......</td>
-                </tr>
-                <tr>
-                    <td>.......</td>
-                    <td>.......</td>
-                    <td>.......</td>
-                    <td>.......</td>
-                    <td>.......</td>
-                </tr>
-            </tbody>
+            <div class="inputs">
+                <input type="email" placeholder="Ancien Mail" required />
+                <input type="email" placeholder="Nouveau Mail" required />
+                <input type="password" placeholder="Mot de passe" required />
+            </div>
 
-        </table>
+            <p class="texte_espace">ㅤ</p>
+
+            <div>
+                <button type="submit" formaction="index.html">
+                    Valider le changement de l'Email</button>
+            </div>
+
+            <p class="texte_espace">ㅤ</p>
+
+        </form>
+
+        <p class="texte_espace">ㅤ</p>
+
+        <form>
+
+            <p class="texte_espace">ㅤ</p>
+            <h1>Modifier votre mot de passe</h1>
+            <p class="texte_espace">ㅤ </p>
+
+            <div class="inputs">
+                <input type="password" placeholder="Ancien mot de passe" required />
+                <input type="password" placeholder="Nouveau mot de passe" required />
+                <input type="password" placeholder="Confirmer le mot de passe" required />
+            </div>
+
+            <p class="texte_espace">ㅤ</p>
+
+            <div>
+                <button type="submit" formaction="index.html">
+                    Valider le changement du mot de passe</button>
+            </div>
+
+            <p class="texte_espace">ㅤ</p>
+
+        </form>
+
 
     </div>
 
