@@ -29,4 +29,11 @@ CREATE TABLE game (
      id_Game INT PRIMARY KEY,
      game_name VARCHAR(255)
 );
+
+CREATE TABLE infoindex (
+    id INT jcon (id),
+    id INT jins (id),
+    id INT jou (id),
+    id INT trec (id),
+);
  
