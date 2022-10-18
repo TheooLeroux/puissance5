@@ -1,0 +1,271 @@
+/*--PARAMETRES GENEREAUX--*/
+
+* {
+    margin: 0 auto;
+    transition: all 0.5s;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/*--HEADER--*/
+
+/*--HEADER : Logo--*/
+
+.flexNav img {
+    width: 250px;
+    height: auto;
+}
+
+/*--HEADER : Navigation--*/
+
+body header div nav a {
+    margin: 10px;
+    color: white;
+    font-size: small;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+body header div nav a:hover {
+    color: #bd5ef6;
+}
+
+.flexNav div nav img {
+    /*image compte*/
+    height: 12px;
+    width: 12px;
+}
+
+/*--HEADER : Background--*/
+
+.flexNav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: rgb(19, 16, 46);
+    height: 90px;
+    width: auto;
+
+}
+
+/*--BANNIERE--*/
+
+.flexBody01 {
+    background: url(https://wallpaperaccess.com/full/1615368.jpg);
+    display: flex;
+    align-items: center;
+    height: 150px;
+    width: auto;
+
+}
+
+.texte_espace {
+    font-size: xx-large;
+}
+
+body div h1 {
+    color: white;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.connexion {
+    font-size: xx-large;
+    letter-spacing: 5px;
+}
+
+/*--BODY--*/
+
+.icon div {
+    /*--icon--*/
+    box-shadow: 5px 5px 10px #0D0B26;
+}
+
+.icon {
+    /*--icon background--*/
+    display: flex;
+    height: 200px;
+    align-items: center;
+    background-color: rgb(19, 16, 46);
+
+}
+
+.icon img {
+    width: 70px;
+    height: auto;
+}
+
+.icon {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    text-align: center;
+    color: rgb(117, 114, 134);
+}
+
+.icon div {
+    height: 250px;
+    width: 30%;
+    background-color: rgb(13, 11, 38, 255);
+}
+
+
+/*--FORMULAIRE--*/
+
+.flexBody02 {
+    display: flex;
+    height: 80%;
+    align-items: center;
+    background-color: rgb(19, 16, 46);
+}
+
+form {
+    margin-top: 20px;
+    background-color: rgb(19, 16, 46);
+    width: 100%;
+}
+
+body .flexBody02 form h1 {
+    color: white;
+    text-align: left;
+    width: 30%;
+    background: 
+    linear-gradient(#bd5ef6 0 0) no-repeat
+    calc(200% - var(--i,0)*100%) 100% / 200% calc(0%*var(--i,0) + .08em);
+    transition: .3s calc(var(--i,0)*.3s), background-position .3s calc(.3s - calc(var(--i,0)*.3s));
+    
+
+}
+
+body .flexBody02 form h1:hover {
+    --i: 1;
+}
+
+form .inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+form .inputs input[type='email'],
+input[type='text'] {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #221f49;
+    outline: none;
+    width: 30%;
+    margin-bottom: 15px;
+}
+
+form .inputs input[type='message'] {
+    display: flex;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    text-align: left;
+    color: white;
+    background-color: #221f49;
+    outline: none;
+    width: 30%;
+    height: 200px;
+    margin-bottom: 15px;
+}
+
+.button_connexion {
+    display: flex;
+    padding: 15px 25px;
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+    color: #fff;
+    background-color: #bd5ef6;
+    outline: none;
+    cursor: pointer;
+}
+
+.button_connexion:hover {
+    border-radius: 4px;
+    transform: translateY(-20px);
+    box-shadow: 0px 5px 0px #7622a7;
+}
+
+/*--FOOTER--*/
+
+footer {
+    display: flex;
+    flex-direction: row;
+    font-size: small;
+    color: white;
+    padding-top: 75px;
+    background-color: #0D0B26;
+    font-family: 'Roboto', sans-serif;
+}
+
+footer h1 {
+    margin-bottom: 25px;
+    color: #FFFFFF;
+}
+
+footer h2 {
+    color: darkgray;
+    font-size: small;
+}
+
+
+/*--FOOTER COTE GAUCHE--*/
+
+
+.information_footer p {
+    text-align: start;
+    margin-left: 0px;
+
+}
+
+.information_liste_footer {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-bottom: 25px;
+    list-style-type: none;
+}
+
+img {
+    flex-direction: row;
+    width: 30px;
+    height: 30px;
+}
+
+footer img:hover {
+    border-radius: 10 10 20;
+    box-shadow: 5px 5px 40px #bd5ef6;
+}
+
+
+
+.information_footer h2 span {
+    color: #bd5ef6;
+
+}
+
+/*--COPYRIGHT--*/
+
+.copyright_footer {
+    margin-top: 100px;
+    margin-bottom: 25px;
+
+    color: darkgray;
+}
+
+/*--FOOTER COTE DROIT--*/
+
+
+.power_footer h2 a {
+    text-decoration: none;
+    color: #878787;
+}
+
+.power_footer h2 span {
+    color: #bd5ef6;
+}
