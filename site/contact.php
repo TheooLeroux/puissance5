@@ -1,12 +1,11 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription</title>
-    <link rel="stylesheet" href="assets/Css/register.css">
+    <title>Contact</title>
+    <link rel="stylesheet" href="assets/Css/contact.css">
 </head>
 
 <body>
@@ -17,17 +16,17 @@
 
         <div class="flexNav">
             <div>
-                <p><img class="logo02"
+                <p><img class="logo"
                         src="https://media.discordapp.net/attachments/301039123160891402/1028264022467956766/LOGO.png"
                         alt=""></p>
             </div>
             <div>
                 <nav>
-                    <a href="index.html">ACCUEIL</a>
-                    <a href="register.html">JEU</a>
-                    <a href="scores.html">SCORES</a>
-                    <a href="contact.html">NOUS CONTACTER</a>
-                    <a href="myaccount.html"><img src="https://www.pngfind.com/pngs/b/110-1102927_profile-icon-png.png"
+                    <a href="index.php">ACCUEIL</a>
+                    <a href="register.php">JEU</a>
+                    <a href="scores.php">SCORES</a>
+                    <a href="contact.php">NOUS CONTACTER</a>
+                    <a href="myaccount.php"><img src="https://www.pngfind.com/pngs/b/110-1102927_profile-icon-png.png"
                             alt=""></a>
                 </nav>
             </div>
@@ -37,11 +36,20 @@
 
     <!-- FIN CODE HEADER -->
 
-
-    <!-- BANNIERE -->
-
     <div class="flexBody01">
-        <h1 class="connexion">INSCRIPTION</h1>
+        <h1 class="connexion">NOUS CONTACTER</h1>
+    </div>
+
+    <div class="icon">
+        <div> <br> <br> <br><br> <img
+                src="https://media.discordapp.net/attachments/301039123160891402/1028248844703649882/mobile.png"
+                alt="contact"> <br> <br> 06 09 78 34 57</div>
+        <div> <br> <br> <br> <br> <img
+                src="https://media.discordapp.net/attachments/301039123160891402/1028248843910918154/mail.png"
+                alt="contact"> <br> <br> support@powerofmemory</div>
+        <div> <br> <br> <br> <br> <img
+                src="https://media.discordapp.net/attachments/301039123160891402/1028248844355502080/map.png"
+                alt="contact"> <br> <br> Cergy - Coding Factory</div>
     </div>
 
     <!-- FORMULAIRE -->
@@ -50,28 +58,35 @@
 
         <form>
 
-            <h1>Créer un compte</h1>
-
+            <p class="texte_espace">ㅤ</p>
+            <h1 class="titre-form">Formulaire de contact</h1>
             <p class="texte_espace">ㅤ </p>
 
             <div class="inputs">
-                <input type="email" placeholder="exemple@mail.com" required />
-                <input type="text" placeholder="Pseudo" required />
-                <input type="password" placeholder="Mot de passe" required />
-                <input type="password" placeholder="Confirmer le mot de passe" required />
+                <input type="text" placeholder="Nom" required />
+                <input type="email" placeholder="Mail" required>
+                <input type="text" placeholder="Sujet" required>
+                <input type="message" placeholder="Message" required>
             </div>
-            <p class="loginpass">Vous avez déjà un compte ?</p><a href="login.html"><p>Cliquer ici</p></a>
+
+            <p class="texte_espace">ㅤ</p>
+
             <div>
-                <button class="button_connexion" type="submit" formaction="login.html">
-                    Valider</button>
+                <button class="button_connexion" type="submit" formaction="memory.html">
+                    Envoyer</button>
             </div>
-            
+
+            <p class="texte_espace">ㅤ</p>
+
         </form>
 
     </div>
 
 
+
+
     <!-- DEBUT CODE FOOTER -->
+
 
     <footer>
 
@@ -105,6 +120,7 @@
                         </p>
 
                         <p class="copyright_footer">Copyright © 2022 Tout droits réservés</p>
+
         </div>
         <div class="power_footer">
             <h1>Power Of Memory</h1>
@@ -115,11 +131,11 @@
                     <h2><a href="contact.html"><span>♦</span> Nous contacter</a></h>
 
         </div>
+
     </footer>
 
 
     <!-- FIN CODE FOOTER -->
-
 </body>
 
 </html>

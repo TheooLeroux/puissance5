@@ -23,11 +23,11 @@
             </div>
             <div>
                 <nav>
-                    <a href="index.html">ACCUEIL</a>
-                    <a href="register.html">JEU</a>
-                    <a href="scores.html">SCORES</a>
-                    <a href="contact.html">NOUS CONTACTER</a>
-                    <a href="myaccount.html"><img src="https://www.pngfind.com/pngs/b/110-1102927_profile-icon-png.png"
+                    <a href="index.php">ACCUEIL</a>
+                    <a href="register.php">JEU</a>
+                    <a href="scores.php">SCORES</a>
+                    <a href="contact.php">NOUS CONTACTER</a>
+                    <a href="myaccount.php"><img src="https://www.pngfind.com/pngs/b/110-1102927_profile-icon-png.png"
                             alt=""></a>
                 </nav>
             </div>
