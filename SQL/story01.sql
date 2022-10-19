@@ -30,10 +30,10 @@ CREATE TABLE game (
      game_name VARCHAR(255)
 );
 
-CREATE TABLE infoindex (
-    id INT jcon (id),
-    id INT jins (id),
-    id INT jou (id),
-    id INT trec (id),
+CREATE TABLE infodex (
+    id_jco INT,
+    id_jin INT,
+    id_jou INT,
+    id_tre INT
 );
  
