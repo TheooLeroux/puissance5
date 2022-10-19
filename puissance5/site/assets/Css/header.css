@@ -1,0 +1,40 @@
+/*--HEADER--*/
+
+/*--HEADER : Logo--*/
+
+.flexNav img {
+    width: 250px;
+    height: auto;
+}
+
+/*--HEADER : Navigation--*/
+
+body header div nav a {
+    margin: 10px;
+    color: white;
+    font-size: small;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+body header div nav a:hover {
+    color: #bd5ef6;
+}
+
+.flexNav div nav img {
+    /*image compte*/
+    height: 12px;
+    width: 12px;
+}
+
+/*--HEADER : Background--*/
+
+.flexNav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: rgb(19, 16, 46);
+    height: 90px;
+    width: auto;
+
+}
