@@ -62,8 +62,8 @@ require "view/header.inc.php";
             require "includes/database.php";
             ?>
             <?php 
-                for($x=1;$x<11;$x++){
-                    $recup = $dbh->query("SELECT * FROM score WHERE id = ".$x."" );
+                for($x=1;$x<4;$x++){
+                    $recup = $dbh->query("SELECT * FROM score WHERE id_Player = ".$x."" );
                     $row=$recup->fetch()
             ?>
                     <tr>  

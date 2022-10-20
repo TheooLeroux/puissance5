@@ -29,7 +29,7 @@ require "view/header.inc.php";
         <div class="dropdown">
             <button class="dropbtn">Filtrer ⬇ </button>
             <div class="dropdown-content">
-            <div><a href="scoresperso.php">Afficher uniquement mes scores</a></div>
+            <div><a href="scorsperso.php">Afficher uniquement mes scores</a></div>
             <div><a href="scoresdifficulté.php">Trier par difficulté</a></div>
             </div>
         </div>
@@ -63,7 +63,7 @@ require "view/header.inc.php";
             ?>
             <?php 
                 for($x=1;$x<11;$x++){
-                    $recup = $dbh->query("SELECT * FROM score WHERE id = ".$x."" );
+                    $recup = $dbh->query("SELECT * FROM score WHERE id_difficulty = ".$x."" );
                     $row=$recup->fetch()
             ?>
                     <tr>  

@@ -9,9 +9,13 @@ CREATE TABLE user(
 
 CREATE TABLE score (
     id INT PRIMARY KEY, 
-    id_Player INT REFERENCES user (id),
-    id_Game INT REFERENCES game (id),
+    id_Player INT,
+    id_Game INT,
+    id_difficulty INT,
+    id_date INT,
     difficulty_Game VARCHAR(255),
+    Player VARCHAR(255),
+    Game VARCHAR(255),
     score_Game INT,
     date_time_Game DATETIME
 );

@@ -63,7 +63,7 @@ require "view/header.inc.php";
             ?>
             <?php 
                 for($x=1;$x<11;$x++){
-                    $recup = $dbh->query("SELECT * FROM score WHERE id = ".$x."" );
+                    $recup = $dbh->query("SELECT * FROM score WHERE id_date = ".$x."" );
                     $row=$recup->fetch()
             ?>
                     <tr>  
