@@ -2,28 +2,41 @@
 require "includes/database.php";
 
 
-if (isset($_POST["email"]) && isset($_POST["pseudo"]) && isset($_POST["password"]) && isset($_POST["confirm_password"])) {
+if (isset($_POST["email"]) && isset($_POST["name"]) && isset($_POST["password"]) && isset($_POST["confirm_password"])) {
     $email = htmlspecialchars($_POST["email"]);
     $password = $_POST["password"];
     $password_repeat = $_POST["confirm_password"];
-    $pseudo = htmlspecialchars($_POST["pseudo"]);
+    $name = htmlspecialchars($_POST["name"]);
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        if (strlen($pseudo) >= 4) {
+        if (strlen($name) >= 4) {
             if($_POST["password"] == $_POST["confirm_password"]){
                 $pattern = '/^(?=.*[!@#$%^&*-])(?=.*[0-9])(?=.*[A-Z]).{8,20}$/ ';
                 if (preg_match($pattern, $password)) {
                 $pom_test = $dbh->prepare('SELECT * FROM user WHERE email = :email');
                 $pom_test->execute(['email' => $email]);
                 $pom_test = $pom_test->fetch();
-                
                 if (empty($pom_test)){
                     $options = [
                         'cost' => 12,
                     ];
                     $passwordhash = password_hash($password, PASSWORD_BCRYPT, $options);
-                    $insert = $dbh->prepare('INSERT INTO user (email, name, password) VALUES ("?", "?", "?")');
-                    $insert->execute();
-                  
+                    $insert = $dbh->prepare('INSERT INTO user (email, name, password) VALUES (:email, :name, :password)');
+                 
+                 
+                    $redirect = $insert->execute(array(
+
+                    'email' => $email,
+             
+                    'name' => $name,
+             
+                    'password' => $password
+             
+             
+                    ));
+                  if($redirect){
+                        header("Location: login.php");
+                    }
+
                     
                 }else{
                     echo "votre compte existe";
@@ -40,6 +53,7 @@ if (isset($_POST["email"]) && isset($_POST["pseudo"]) && isset($_POST["password"
     }else {
         echo "L'adresse mail n'est pas au format valide";
     }
+    
 }
 
 ?>
@@ -111,7 +125,7 @@ if (isset($_POST["email"]) && isset($_POST["pseudo"]) && isset($_POST["password"
                       
                 <input type="email" placeholder="exemple@mail.com" name="email" required />
               
-                <input type="text" placeholder="Pseudo" name="pseudo" required />
+                <input type="text" placeholder="Pseudo" name="name" required />
                
                 <input type="password" placeholder="Mot de passe" name="password" required />
                
@@ -122,7 +136,7 @@ if (isset($_POST["email"]) && isset($_POST["pseudo"]) && isset($_POST["password"
             
             <p class="loginpass">Vous avez déjà un compte ?</p><a href="login.php"><p>Cliquer ici</p></a>
             <div>
-                <button class="button_connexion" type="submit">
+                <button class="button_connexion" type="submit" >
                     Valider</button>
                     
                     

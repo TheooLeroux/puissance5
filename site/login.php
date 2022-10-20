@@ -1,3 +1,30 @@
+<?php
+require "includes/database.php";
+
+
+session_start();
+
+if (isset($_POST['email'])){
+  $email = stripslashes($_REQUEST['email']); 
+  //$email = mysqli_real_escape_string($dbh, $email);
+  $password = stripslashes($_REQUEST['password']);
+//$password = mysqli_real_escape_string($dbh, $password);
+  $query = $dbh->prepare('SELECT * FROM user WHERE email = :email and password=:password');
+  $query->execute(['email' => $email, 'password' => $password]);
+  $query = $query->fetch();
+  if($query[1]==$email){
+      $_SESSION['email'] = $email;
+    header("Location: memory.php");
+  }else{
+    $message = "Le nom d'utilisateur ou le mot de passe est incorrect.";
+  }
+  
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,20 +77,21 @@
 
     <div class="flexBody02">
 
-        <form>
+        <form method="post" name="login">
 
             <h1>Connectez-vous</h1>
             <p class="texte_espace">ㅤ </p>
 
             <div class="inputs">
-                <input type="email" placeholder="exemple@mail.com" required />
-                <input type="password" placeholder="Mot de passe" required>
+
+                <input type="email" placeholder="exemple@mail.com" name="email" required/>
+                <input type="password" placeholder="Mot de passe" name="password" required/>
             </div>
 
             <p class="texte_espace">ㅤ</p>
 
             <div>
-                <button class="button_connexion" type="submit" formaction="memory.html">
+                <button class="button_connexion" type="submit" >
                     Connexion</button>
             </div>
 
@@ -113,11 +141,11 @@
         </div>
         <div class="power_footer">
             <h1>Power Of Memory</h1>
-            <h2><a href="memory.html"><span>♦</span> Jouer !</a></h>
+            <h2><a href="memory.php"><span>♦</span> Jouer !</a></h>
                 <h2>ㅤ</h2>
-                <h2><a href="scores.html"><span>♦</span> Les scores</a></h>
+                <h2><a href="scores.php"><span>♦</span> Les scores</a></h>
                     <h2>ㅤ</h2>
-                    <h2><a href="contact.html"><span>♦</span> Nous contacter</a></h>
+                    <h2><a href="contact.php"><span>♦</span> Nous contacter</a></h>
 
         </div>
 

@@ -44,7 +44,7 @@
     <div class="titre">BIENVENUE DANS <br> NOTRE STUDIO !</div>
     <div class="desc">Venez challenger les cerveaux les plus agiles !</div>
     <form>
-      <button class="button_play" type="submit" formaction="memory.html">JOUER !</button>  </div>
+      <button class="button_play" type="submit" formaction="memory.php">JOUER !</button>  </div>
     </form>
 
   <!-- BODY01 -->
@@ -175,11 +175,11 @@
     </div>
     <div class="power_footer">
       <h1>Power Of Memory</h1>
-      <h2><a href="memory.html"><span>♦</span> Jouer !</a></h>
+      <h2><a href="memory.php"><span>♦</span> Jouer !</a></h>
         <h2>ㅤ</h2>
-        <h2><a href="scores.html"><span>♦</span> Les scores</a></h>
+        <h2><a href="scores.php"><span>♦</span> Les scores</a></h>
           <h2>ㅤ</h2>
-          <h2><a href="contact.html"><span>♦</span> Nous contacter</a></h>
+          <h2><a href="contact.php"><span>♦</span> Nous contacter</a></h>
 
     </div>
 

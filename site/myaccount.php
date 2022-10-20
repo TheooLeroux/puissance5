@@ -1,3 +1,39 @@
+<?php
+require 'includes/database.php';
+
+  if(isset($_POST['newEmail'])){
+    $email = stripslashes($_POST['email']); 
+    $password = stripslashes($_REQUEST['password']);
+    $newEmail = stripslashes($_POST['newEmail']); 
+    $query = $dbh->prepare('SELECT * FROM user WHERE email = :email and password = :password');
+    $query->execute(['email' => $email, 'password' => $password]);
+    $query = $query->fetch();
+    $newquery=$dbh->prepare('UPDATE user SET email=:newEmail WHERE id=:id');
+    $newquery->execute(['newEmail' => $newEmail, 'id' => $query[0]]);
+  }
+  if(isset($_POST['newPassword'])){
+    $email = stripslashes($_POST['email']); 
+    $password = stripslashes($_REQUEST['password']);
+    $newPassword = stripslashes($_POST['newPassword']); 
+    $newPasswordConfirmation = stripslashes($_POST['newPasswordConfirmation']);
+    if($newPassword == $newPasswordConfirmation){
+    $query = $dbh->prepare('SELECT * FROM user WHERE email = :email and password = :password');
+    $query->execute(['email' => $email, 'password' => $password]);
+    $query = $query->fetch();
+    $newquery=$dbh->prepare('UPDATE user SET password=:newPassword WHERE id=:id');
+    $newquery->execute(['newPassword' => $newPassword, 'id' => $query[0]]);
+    }
+  }
+?>
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,22 +85,25 @@
 
     <div class="flexBody02">
 
-        <form>
+        <form method = "post">
 
             <p class="texte_espace">ㅤ</p>
             <h1>Modifier votre email</h1>
             <p class="texte_espace">ㅤ </p>
 
             <div class="inputs">
-                <input type="email" placeholder="Ancien Mail" required />
-                <input type="email" placeholder="Nouveau Mail" required />
-                <input type="password" placeholder="Mot de passe" required />
+            
+                <input type="email" placeholder="Ancien Mail" name='email' required />
+            
+                <input type="email" placeholder="Nouveau Mail" name='newEmail' required />
+
+                <input type="password" placeholder="Mot de passe" name='password' required />
             </div>
 
             <p class="texte_espace">ㅤ</p>
 
             <div>
-                <button type="submit" formaction="index.html">
+                <button type="submit" >
                     Valider le changement de l'Email</button>
             </div>
 
@@ -74,22 +113,26 @@
 
         <p class="texte_espace">ㅤ</p>
 
-        <form>
+        <form method = "post">
 
             <p class="texte_espace">ㅤ</p>
             <h1>Modifier votre mot de passe</h1>
             <p class="texte_espace">ㅤ </p>
 
             <div class="inputs">
-                <input type="password" placeholder="Ancien mot de passe" required />
-                <input type="password" placeholder="Nouveau mot de passe" required />
-                <input type="password" placeholder="Confirmer le mot de passe" required />
+                <input type="email" placeholder="Email" name='email' required />
+
+                <input type="password" placeholder="Ancien mot de passe" name='password' required />
+                
+                <input type="password" placeholder="Nouveau mot de passe" name='newPassword' required />
+
+                <input type="password" placeholder="Confirmer le mot de passe" name='newPasswordConfirmation' required />
             </div>
 
             <p class="texte_espace">ㅤ</p>
 
             <div>
-                <button type="submit" formaction="index.html">
+                <button type="submit" >
                     Valider le changement du mot de passe</button>
             </div>
 
@@ -140,11 +183,11 @@
         </div>
         <div class="power_footer">
             <h1>Power Of Memory</h1>
-            <h2><a href="memory.html"><span>♦</span> Jouer !</a></h>
+            <h2><a href="memory.php"><span>♦</span> Jouer !</a></h>
                 <h2>ㅤ</h2>
-                <h2><a href="scores.html"><span>♦</span> Les scores</a></h>
+                <h2><a href="scores.php"><span>♦</span> Les scores</a></h>
                     <h2>ㅤ</h2>
-                    <h2><a href="contact.html"><span>♦</span> Nous contacter</a></h>
+                    <h2><a href="contact.php"><span>♦</span> Nous contacter</a></h>
 
         </div>
     </footer>
