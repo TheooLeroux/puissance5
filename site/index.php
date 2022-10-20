@@ -1,6 +1,7 @@
 <?php
 require "includes/database.php";
 require "view/header.inc.php";
+
 ?>
 
 

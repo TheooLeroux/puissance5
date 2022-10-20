@@ -25,26 +25,32 @@ require "view/header.inc.php";
     </div>
 
     <!-- FORMULAIRE -->
-
-    <div class="button_score">
-        <div class="dropdown">
-            <button class="dropbtn">Filtrer ⬇ </button>
-            <div class="dropdown-content">
-            <div><a href=".........">Afficher uniquement mes scores</a></div>
-            <div><a href=".........">Trier par difficulté</a></div>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <button class="dropbtn">Trier ⬇ </button>
-            <div class="dropdown-content">
-            <div><a href=".........">Trier par scores</a></div>
-            <div><a href=".........">Trier par date</a></div>
-            </div>
-        </div>
-    </div>
     
     <div class="flexBody02">
+
+        <div class="nav_button">
+            
+            <div class="button_score">
+                <div class="dropdown">
+                    <button class="dropbtn">Filtrer ⬇ </button>
+                    <div class="dropdown-content">
+                        <div><a href=".........">Afficher uniquement mes scores</a></div>
+                        <div><a href=".........">Trier par difficulté</a></div>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn">Trier ⬇ </button>
+                    <div class="dropdown-content">
+                        <div><a href=".........">Afficher uniquement mes scores</a></div>
+                        <div><a href=".........">Trier par difficulté</a></div>
+                    </div>
+                </div>
+
+            </div>    
+        </div>
+
+    
 
         <table class="tableau">
             <thead>
@@ -59,6 +65,41 @@ require "view/header.inc.php";
 
 
             <tbody>
+                <tr>
+                    <td>.......</td>
+                    <td>.......</td>
+                    <td>.......</td>
+                    <td>.......</td>
+                    <td>.......</td>
+                </tr>
+                <tr>
+                    <td>.......</td>
+                    <td>.......</td>
+                    <td>.......</td>
+                    <td>.......</td>
+                    <td>.......</td>
+                </tr>
+                <tr>
+                    <td>.......</td>
+                    <td>.......</td>
+                    <td>.......</td>
+                    <td>.......</td>
+                    <td>.......</td>
+                </tr>
+                <tr>
+                    <td>.......</td>
+                    <td>.......</td>
+                    <td>.......</td>
+                    <td>.......</td>
+                    <td>.......</td>
+                </tr>
+                <tr>
+                    <td>.......</td>
+                    <td>.......</td>
+                    <td>.......</td>
+                    <td>.......</td>
+                    <td>.......</td>
+                </tr>
                 <tr>
                     <td>.......</td>
                     <td>.......</td>

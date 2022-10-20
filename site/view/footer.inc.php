@@ -1,6 +1,6 @@
 <footer>
 
-<link rel="stylesheet" href="assets/Css/footer.css">
+<link rel="stylesheet" href="assets/css/footer.css">
 <div class="information_footer">
   <h1>Information</h1>
   <h2>En cas de problèmes ou de questions, n'hésitez pas à nous contacter ! ♥</h2>
