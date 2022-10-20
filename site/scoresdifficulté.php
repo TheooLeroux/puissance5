@@ -62,6 +62,7 @@ require "view/header.inc.php";
             require "includes/database.php";
             ?>
             <?php 
+                error_reporting(0);
                 for($x=1;$x<11;$x++){
                     $recup = $dbh->query("SELECT * FROM score WHERE id_difficulty = ".$x."" );
                     $row=$recup->fetch()
