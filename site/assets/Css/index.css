@@ -6,47 +6,6 @@
     transition: all 0.5s;
 }
 
-/*--HEADER--*/
-
-/*--HEADER : Logo--*/
-
-.flexNav img {
-    width: 250px;
-    height: auto;
-}
-
-/*--HEADER : Navigation--*/
-
-body header div nav a {
-    margin: 10px;
-    color: white;
-    font-size: small;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-body header div nav a:hover {
-    color: #bd5ef6;
-}
-
-.flexNav div nav img {
-    /*image compte*/
-    height: 12px;
-    width: 12px;
-}
-
-/*--HEADER : Background--*/
-
-.flexNav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background: rgb(19, 16, 46);
-    height: 90px;
-    width: auto;
-
-}
-
 /*--BANNIERE--*/
 
 /*--Background--*/
@@ -178,7 +137,12 @@ body {
     align-content: center;
     width: 80%;
     height: 500px;
-    margin-top: 10%;
+    margin-top: -20%;
+}
+
+.imgbox{
+    height: 90%;
+    width: 100%;
 }
 
 .hade img {
@@ -337,7 +301,7 @@ body {
 .equipe {
     display: flex;
     width: 90%;
-    height: 25%;
+    height: 60%;
     padding-top: 50px;
     padding-bottom: 10%;
 }
@@ -393,9 +357,8 @@ body {
     margin-bottom: 30px;
 }
 
-.equipe img.nix {
-    height: 5%;
-    width: 50%;
+.icon_social{
+    margin-top: 60px;
 }
 
 .orn {
@@ -405,84 +368,4 @@ body {
 .orn img {
     height: 10%;
     width: 20%;
-}
-
-/*--FOOTER--*/
-
-footer {
-    display: flex;
-    flex-direction: row;
-    font-size: small;
-    color: white;
-    padding-top: 75px;
-    background-color: #0D0B26;
-    font-family: 'Roboto', sans-serif;
-}
-
-footer h1 {
-    margin-bottom: 25px;
-    color: #FFFFFF;
-}
-
-footer h2 {
-    color: darkgray;
-    font-size: small;
-}
-
-
-/*--FOOTER COTE GAUCHE--*/
-
-
-.information_footer p {
-    text-align: start;
-    margin-left: 0px;
-
-}
-
-.information_liste_footer {
-
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    margin-bottom: 25px;
-    list-style-type: none;
-}
-
-img {
-    flex-direction: row;
-    width: 30px;
-    height: 30px;
-}
-
-footer img:hover {
-    border-radius: 10 10 20;
-    box-shadow: 5px 5px 40px #bd5ef6;
-}
-
-
-
-.information_footer h2 span {
-    color: #bd5ef6;
-
-}
-
-/*--COPYRIGHT--*/
-
-.copyright_footer {
-    margin-top: 100px;
-    margin-bottom: 25px;
-
-    color: darkgray;
-}
-
-/*--FOOTER COTE DROIT--*/
-
-
-.power_footer h2 a {
-    text-decoration: none;
-    color: #878787;
-}
-
-.power_footer h2 span {
-    color: #bd5ef6;
 }

@@ -1,4 +1,9 @@
 <?php
+require "view/header.inc.php";
+?>
+
+<?php
+
 require "includes/database.php";
 
 if (isset($_COOKIE['user'])) {
@@ -72,13 +77,13 @@ if (isset($_POST["email"]) && isset($_POST["pseudo"]) && isset($_POST["password"
                         urlencode('http://192.168.64.2/puissance4/site/register.php' . $email . '&verif=' . $chaine)
                     );
                 }else{
-                    echo "votre compte existe";
+                    echo "Votre compte existe";
                 }
                 }else{
                     echo "Votre mot de passe doit contenir au moins 8 caractès dont au moins1 lettre minuscule, 1 lettre majuscule, 1 chiffre et 1 caractère spécial (!@#$%^&*-)";
                 }
             }else{
-                echo "les mots de passe ne correspondent pas";
+                echo "Les mots de passe ne correspondent pas";
             }
         }else {
             echo "Le pseudo doit contenir minimum 4 caractères";
@@ -90,11 +95,8 @@ if (isset($_POST["email"]) && isset($_POST["pseudo"]) && isset($_POST["password"
 ?>
 
 
-
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -105,32 +107,6 @@ if (isset($_POST["email"]) && isset($_POST["pseudo"]) && isset($_POST["password"
 </head>
 
 <body>
-
-    <!-- DEBUT CODE HEADER -->
-
-    <header>
-
-        <div class="flexNav">
-            <div>
-                <p><img class="logo02"
-                        src="https://media.discordapp.net/attachments/301039123160891402/1028264022467956766/LOGO.png"
-                        alt=""></p>
-            </div>
-            <div>
-                <nav>
-                    <a href="index.php">ACCUEIL</a>
-                    <a href="register.php">JEU</a>
-                    <a href="scores.php">SCORES</a>
-                    <a href="contact.php">NOUS CONTACTER</a>
-                    <a href="myaccount.php"><img src="https://www.pngfind.com/pngs/b/110-1102927_profile-icon-png.png"
-                            alt=""></a>
-                </nav>
-            </div>
-        </div>
-
-    </header>
-
-    <!-- FIN CODE HEADER -->
 
 
     <!-- BANNIERE -->
@@ -150,8 +126,6 @@ if (isset($_POST["email"]) && isset($_POST["pseudo"]) && isset($_POST["password"
             <p class="texte_espace">ㅤ </p>
 
             <div class="inputs">
-
-
                 <input type="email" placeholder="exemple@mail.com" required />
                 <input type="text" placeholder="Pseudo" required />
                 <input type="password" placeholder="Mot de passe" required />
@@ -170,55 +144,10 @@ if (isset($_POST["email"]) && isset($_POST["pseudo"]) && isset($_POST["password"
     </div>
 
 
-    <!-- DEBUT CODE FOOTER -->
-
-    <footer>
-
-        <div class="information_footer">
-            <h1>Information</h1>
-            <h2>En cas de problèmes ou de questions, n'hésitez pas à nous contacter ! ♥</h2>
-            <h2>ㅤ</h2>
-            <h2><span>Tel :</span> 06 09 78 34 57 </h>
-                <h2>ㅤ</h2>
-                <h2><span>Email :</span> mathisbogoss@gmail.com </h>
-                    <h2>ㅤ</h2>
-                    <h2><span>Location :</span> Cergy - Coding Factory </h>
-                        <h2>ㅤ</h2>
-
-                        <p>
-                            <a href="https://www.facebook.com/"><img
-                                    src="https://media.discordapp.net/attachments/301039123160891402/1027325507244666951/facebook.png"
-                                    alt=""></a>
-                            <a href="https://www.twitter.com/"><img
-                                    src="https://media.discordapp.net/attachments/301039123160891402/1027325509304078406/twitter.png"
-                                    alt=""></a>
-                            <a href="https://www.tiktok.com/"><img
-                                    src="https://media.discordapp.net/attachments/301039123160891402/1027325508670730281/tiktok.png"
-                                    alt=""></a>
-                            <a href="https://www.pinterest.com/"><img
-                                    src="https://media.discordapp.net/attachments/301039123160891402/1027325508272259152/pinterest.png"
-                                    alt=""></a>
-                            <a href="https://www.instagram.com/"><img
-                                    src="https://media.discordapp.net/attachments/301039123160891402/1027325507617968230/insta.png"
-                                    alt=""></a>
-                        </p>
-
-                        <p class="copyright_footer">Copyright © 2022 Tout droits réservés</p>
-        </div>
-        <div class="power_footer">
-            <h1>Power Of Memory</h1>
-            <h2><a href="memory.php"><span>♦</span> Jouer !</a></h>
-                <h2>ㅤ</h2>
-                <h2><a href="scores.php"><span>♦</span> Les scores</a></h>
-                    <h2>ㅤ</h2>
-                    <h2><a href="contact.php"><span>♦</span> Nous contacter</a></h>
-
-        </div>
-    </footer>
-
-
-    <!-- FIN CODE FOOTER -->
-
 </body>
+
+<?php
+require "view/footer.inc.php";
+  ?>
 
 </html>
