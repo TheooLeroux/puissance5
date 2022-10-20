@@ -65,20 +65,25 @@ require "view/header.inc.php";
       <p class="imgbox"><img src="https://media.discordapp.net/attachments/301039123160891402/1031666329184391168/logoneon.png" alt="4"></p>
     </div>
     <div class="boxgene">
-      <div class="boxhaut">
+    <?php
+    require "includes/database.php";
+    $recup = $dbh->query('SELECT * FROM infodex');
+    $row=$recup->fetch()
+    ?>
+      <div class="boxhaut"> 
         <div class="box1">
-          <p><span>310</span><br>Parties Jouées</p> 
+          <p><span><?= $row['id_jou']; ?></span><br>Parties Jouées</p> 
         </div>
         <div class="box2">
-          <p><span>1020</span><br>Joueurs Connectés</p> 
+          <p><span><?= $row['id_jco']; ?></span><br>Joueurs Connectés</p> 
         </div>
       </div>
       <div class="boxbas">
         <div class="box3">
-          <p><span>10 sec</span><br>Temps Record</p> 
+          <p><span><?= $row['id_tre']; ?> sec</span><br>Temps Record</p> 
         </div>
         <div class="box4">
-          <p><span>21 300</span><br>Joueurs Inscrits</p> 
+          <p><span><?= $row['id_jin']; ?></span><br>Joueurs Inscrits</p> 
         </div>
       </div>
     </div>
