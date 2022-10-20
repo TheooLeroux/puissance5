@@ -103,7 +103,7 @@ require "view/header.inc.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion</title>
-    <link rel="stylesheet" href="assets/Css/login.css">
+    <link rel="stylesheet" href="assets/css/login.css">
 </head>
 
 <body>
@@ -135,6 +135,7 @@ require "view/header.inc.php";
                 <button class="button_connexion" type="submit" formaction="memory.php">
                     Connexion</button>
             </div>
+            
 
         </form>
 

@@ -103,7 +103,7 @@ if (isset($_POST["email"]) && isset($_POST["pseudo"]) && isset($_POST["password"
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
-    <link rel="stylesheet" href="assets/Css/register.css">
+    <link rel="stylesheet" href="assets/css/register.css">
 </head>
 
 <body>

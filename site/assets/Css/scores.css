@@ -65,6 +65,68 @@ body header div nav a:hover {
 
 /*--TABLEAU--*/
 
+
+body {
+    background-color: rgb(19, 16, 46);
+}
+.button_score {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 20%;
+    margin-right: 23%;
+}
+
+.dropbtn {
+    background-color: #bd5ef6;
+    color: white;
+    padding: 5px;
+    font-size: small;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 150px;
+  }
+  
+  /* Style for dropdown content */
+  .dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    min-width: 85px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 10px;
+  }
+  
+  .dropdown-content div {
+    padding: 10px;
+    border: #bd5ef6 solid 1px;
+    font-size: x-small;
+    border-radius: 10px;
+    background-color: #474885;
+  }
+  
+  .dropdown-content div a{
+    color: white;
+    text-decoration: none;
+  }
+
+  .dropdown-content div:hover {
+    background-color: #221f49;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+    color: white;
+  }
+  
+  .dropdown:hover .dropbtn {
+    box-shadow: 0px 8px 16px 0px #0D0B26;
+  }
+  
+
 .flexBody02 {
     display: flex;
     flex-direction: row;
@@ -157,7 +219,6 @@ footer h2 {
     color: darkgray;
     font-size: small;
 }
-
 
 /*--FOOTER COTE GAUCHE--*/
 

@@ -12,7 +12,7 @@ require "view/header.inc.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tableau des scores</title>
-    <link rel="stylesheet" href="assets/Css/scores.css">
+    <link rel="stylesheet" href="assets/css/scores.css">
 </head>
 
 <body>
@@ -26,6 +26,24 @@ require "view/header.inc.php";
 
     <!-- FORMULAIRE -->
 
+    <div class="button_score">
+        <div class="dropdown">
+            <button class="dropbtn">Filtrer ⬇ </button>
+            <div class="dropdown-content">
+            <div><a href=".........">Afficher uniquement mes scores</a></div>
+            <div><a href=".........">Trier par difficulté</a></div>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Trier ⬇ </button>
+            <div class="dropdown-content">
+            <div><a href=".........">Trier par scores</a></div>
+            <div><a href=".........">Trier par date</a></div>
+            </div>
+        </div>
+    </div>
+    
     <div class="flexBody02">
 
         <table class="tableau">
