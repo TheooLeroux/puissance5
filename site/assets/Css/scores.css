@@ -68,13 +68,12 @@ body header div nav a:hover {
 
 
 body {
-    background-color: rgb(19, 16, 46);
+    background-color: rgb(40, 22, 208);
 }
 
 .nav_button {
     display: flex;
     width: 100%;
-    margin-top: 30px;
 }
 
 .button_score {

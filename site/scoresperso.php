@@ -24,7 +24,7 @@ require "view/header.inc.php";
         <h1 class="connexion">TABLEAU DES SCORES</h1>
     </div>
 
-<!-- FORMULAIRE -->
+    <!-- FORMULAIRE -->
 
     <div class="flexBody02">
 
@@ -49,7 +49,7 @@ require "view/header.inc.php";
 
             </div>
         </div>
-        
+
         <table class="tableau">
             <thead>
                 <tr>
@@ -66,13 +66,13 @@ require "view/header.inc.php";
             <?php
             require "includes/database.php";
             ?>
-            <?php 
+            <?php
                 error_reporting(0);
                 for($x=1;$x<11;$x++){
-                    $recup = $dbh->query("SELECT * FROM score WHERE id = ".$x."" );
+                    $recup = $dbh->query("SELECT * FROM score WHERE id_Player = ".$x." AND Player = 'Hamza'");
                     $row=$recup->fetch()
             ?>
-                    <tr>  
+                    <tr>
                     <td><?= $row['Game']; ?></td>
                     <td><?= $row['Player']; ?></td>
                     <td><?= $row['difficulty_Game']; ?></td>
@@ -80,7 +80,7 @@ require "view/header.inc.php";
                     <td><?= $row['date_time_Game']; ?></td>
                     </tr>
                     <?php
-                    
+                                        
                 
                 }
             ?>

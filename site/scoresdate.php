@@ -49,7 +49,7 @@ require "view/header.inc.php";
 
             </div>
         </div>
-        
+
         <table class="tableau">
             <thead>
                 <tr>
@@ -69,7 +69,7 @@ require "view/header.inc.php";
             <?php 
                 error_reporting(0);
                 for($x=1;$x<11;$x++){
-                    $recup = $dbh->query("SELECT * FROM score WHERE id = ".$x."" );
+                    $recup = $dbh->query("SELECT * FROM score WHERE id_date = ".$x."" );
                     $row=$recup->fetch()
             ?>
                     <tr>  
