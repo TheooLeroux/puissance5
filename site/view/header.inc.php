@@ -1,6 +1,6 @@
 <header>
 
-<link rel="stylesheet" href="assets/Css/header.css">
+<link rel="stylesheet" href="assets/css/header.css">
 <div class="flexNav">
   <div>
     <p><img class="logo02"

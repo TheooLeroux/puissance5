@@ -25,25 +25,30 @@ require "view/header.inc.php";
     </div>
 
     <!-- FORMULAIRE -->
-    <div class="button_score">
-        <div class="dropdown">
-            <button class="dropbtn">Filtrer ⬇ </button>
-            <div class="dropdown-content">
-            <div><a href="scoresperso.php">Afficher uniquement mes scores</a></div>
-            <div><a href="scoresdifficulté.php">Trier par difficulté</a></div>
-            </div>
-        </div>
-
-        <div class="dropdown">
-            <button class="dropbtn">Trier ⬇ </button>
-            <div class="dropdown-content">
-            <div><a href="scores.php">Trier par scores</a></div>
-            <div><a href="scoresdate.php">Trier par date</a></div>
-            </div>
-        </div>
-    </div>
 
     <div class="flexBody02">
+
+        <div class="nav_button">
+
+            <div class="button_score">
+                <div class="dropdown">
+                    <button class="dropbtn">Filtrer ⬇ </button>
+                    <div class="dropdown-content">
+                        <div><a href="scoresperso.php">Afficher uniquement mes scores</a></div>
+                        <div><a href="scoresdifficulte.php">Trier par difficulté</a></div>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn">Trier ⬇ </button>
+                    <div class="dropdown-content">
+                        <div><a href="scores.php">Trier par scores</a></div>
+                        <div><a href="scoresdate.php">Trier par date</a></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
 
         <table class="tableau">
             <thead>

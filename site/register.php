@@ -2,108 +2,81 @@
 require "view/header.inc.php";
 ?>
 
-<?php
 
+<?php
 require "includes/database.php";
 
-if (isset($_COOKIE['user'])) {
-    $login = $dbh->prepare('SELECT ip FROM user WHERE id = :id');
-    $login->execute(['id' => $_COOKIE['user_id']]);
-    $login = $login->fetch();
-    if(isset($login['ip']) && $login['ip'] == getIp()){
-        header("Location: game");
-    }else{
-        setcookie('user', 'none', time() - 1);
-    }
-}
 
-if (isset($_GET['verif']) && isset($_GET['email'])){
-    $verif = $dbh->prepare('SELECT * FROM mail_verif WHERE chaine = :chaine');
-    $verif->execute(['chaine' => $_GET['verif']]);
-    $verif = $verif->fetch();
-    $chaine = htmlspecialchars($verif['chaine']);
-    $user_id = htmlspecialchars($verif['user_id']);
-    $verif_email = $dbh->prepare('SELECT id FROM user WHERE email = :email');
-    $verif_email->execute(['email' => $_GET['email']]);
-    $verif_email = $verif_email->fetch();
-    if (isset($verif_email['id']) && !empty($verif_email['id'])) {
-        $email_validate = $dbh->prepare('UPDATE user SET mail_verif = "Yes" WHERE user.id = :id;');
-        $email_validate->execute(['id' => $verif_email['id']]);
-    }
-}
-
-
-if (isset($_POST["email"]) && isset($_POST["pseudo"]) && isset($_POST["password"]) && isset($_POST["password_repeat"])) {
+if (isset($_POST["email"]) && isset($_POST["name"]) && isset($_POST["password"]) && isset($_POST["confirm_password"])) {
     $email = htmlspecialchars($_POST["email"]);
     $password = $_POST["password"];
-    $password_repeat = $_POST["password_repeat"];
-    $pseudo = htmlspecialchars($_POST["pseudo"]);
+    $password_repeat = $_POST["confirm_password"];
+    $name = htmlspecialchars($_POST["name"]);
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        if (strlen($pseudo) >= 4) {
-            if($_POST["password"] == $_POST["password_repeat"]){
+        if (strlen($name) >= 4) {
+            if($_POST["password"] == $_POST["confirm_password"]){
                 $pattern = '/^(?=.*[!@#$%^&*-])(?=.*[0-9])(?=.*[A-Z]).{8,20}$/ ';
                 if (preg_match($pattern, $password)) {
-                $test = $dbh->prepare('SELECT * FROM user WHERE email = :email');
-                $test->execute(['email' => $email]);
-                $test = $test->fetch();
-                
-                if (empty($test)){
+                $pom_test = $dbh->prepare('SELECT * FROM user WHERE email = :email');
+                $pom_test->execute(['email' => $email]);
+                $pom_test = $pom_test->fetch();
+                if (empty($pom_test)){
                     $options = [
                         'cost' => 12,
                     ];
                     $passwordhash = password_hash($password, PASSWORD_BCRYPT, $options);
-                    $insert = $dbh->prepare('INSERT INTO user(email, pseudo, mdp) VALUES (:email, :pseudo, :mdp)');
-                    $insert->execute(["email" => $email, "pseudo" => $pseudo, "mdp" => $passwordhash]);
-                    function genererChaineAleatoire($longueur = 10){
-                        $caracteres = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-                        $longueurMax = strlen($caracteres);
-                        $chaineAleatoire = '';
-                        for ($i = 0; $i < $longueur; $i++)
-                        {
-                        $chaineAleatoire .= $caracteres[rand(0, $longueurMax - 1)];
-                        }
-                        return $chaineAleatoire;
+                    $insert = $dbh->prepare('INSERT INTO user (email, name, password) VALUES (:email, :name, :password)');
+                 
+                 
+                    $redirect = $insert->execute(array(
+
+                    'email' => $email,
+             
+                    'name' => $name,
+             
+                    'password' => $password
+             
+             
+                    ));
+                  if($redirect){
+                        header("Location: login.php");
                     }
-                    $chaine = genererChaineAleatoire(45);
-                    $recup_id = $dbh->prepare('SELECT id FROM user WHERE email = :email');
-                    $recup_id->execute(['email' => $email]);
-                    $recup_id = $recup_id->fetch();
-                    $recup_id = $recup_id['id'];
-                    $inset_verif = $dbh->prepare('INSERT INTO mail_verif(id_user, chaine) VALUES (:id_user, :chaine)');
-                    $inset_verif->execute(['id_user' => $recup_id, 'chaine' => $chaine]);
-                    mail(
-                        $email,
-                        'test',
-                        urlencode('http://192.168.64.2/puissance4/site/register.php' . $email . '&verif=' . $chaine)
-                    );
+
+                    
                 }else{
-                    echo "Votre compte existe";
+                    echo "Votre compte existe.";
                 }
                 }else{
-                    echo "Votre mot de passe doit contenir au moins 8 caractès dont au moins1 lettre minuscule, 1 lettre majuscule, 1 chiffre et 1 caractère spécial (!@#$%^&*-)";
+                    echo "ERREUR : Votre mot de passe doit contenir au moins 8 caractères dont au moins 1 lettre minuscule, 1 lettre majuscule, 1 chiffre et 1 caractère spécial (!@#$%^&*-).";
                 }
             }else{
-                echo "Les mots de passe ne correspondent pas";
+                echo "ERREUR : Les mots de passe ne correspondent pas.";
             }
         }else {
-            echo "Le pseudo doit contenir minimum 4 caractères";
+            echo "ERREUR : Le pseudo doit contenir minimum 4 caractères.";
         }
     }else {
-        echo "L'adresse mail n'est pas au format valide";
+        echo "ERREUR : L'adresse mail n'est pas au format valide.";
     }
+    
 }
+
 ?>
 
 
+
+
+
+
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
-    <link rel="stylesheet" href="assets/Css/register.css">
+    <link rel="stylesheet" href="assets/css/register.css">
 </head>
 
 <body>
@@ -119,27 +92,36 @@ if (isset($_POST["email"]) && isset($_POST["pseudo"]) && isset($_POST["password"
 
     <div class="flexBody02">
 
-        <form>
+    <form method="post">
 
             <h1>Créer un compte</h1>
 
             <p class="texte_espace">ㅤ </p>
 
             <div class="inputs">
-                <input type="email" placeholder="exemple@mail.com" required />
-                <input type="text" placeholder="Pseudo" required />
-                <input type="password" placeholder="Mot de passe" required />
-                <input type="password" placeholder="Confirmer le mot de passe" required />
+               
+                    
+                      
+                <input type="email" placeholder="exemple@mail.com" name="email" required />
+              
+                <input type="text" placeholder="Pseudo" name="name" required />
+               
+                <input type="password" placeholder="Mot de passe" name="password" required />
+               
+                <input type="password" placeholder="Confirmer le mot de passe" name="confirm_password" required />
+
+
             </div>
+            
             <p class="loginpass">Vous avez déjà un compte ?</p><a href="login.php"><p>Cliquer ici</p></a>
             <div>
-                <button class="button_connexion" type="submit" formaction="login.php">
+                <button class="button_connexion" type="submit" >
                     Valider</button>
-
+                    
                     
             </div>
             
-        </form>
+            </form>
 
     </div>
 
@@ -148,6 +130,6 @@ if (isset($_POST["email"]) && isset($_POST["pseudo"]) && isset($_POST["password"
 
 <?php
 require "view/footer.inc.php";
-  ?>
+?>
 
 </html>
