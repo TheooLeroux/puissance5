@@ -9,9 +9,13 @@ CREATE TABLE user(
 
 CREATE TABLE score (
     id INT PRIMARY KEY, 
-    id_Player INT REFERENCES user (id),
-    id_Game INT REFERENCES game (id),
+    id_Player INT,
+    id_Game INT,
+    id_difficulty INT,
+    id_date INT,
     difficulty_Game VARCHAR(255),
+    Player VARCHAR(255),
+    Game VARCHAR(255),
     score_Game INT,
     date_time_Game DATETIME
 );
@@ -28,5 +32,12 @@ CREATE TABLE Message (
 CREATE TABLE game (
      id_Game INT PRIMARY KEY,
      game_name VARCHAR(255)
+);
+
+CREATE TABLE infodex (
+    id_jco INT,
+    id_jin INT,
+    id_jou INT,
+    id_tre INT
 );
  
