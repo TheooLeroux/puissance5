@@ -6,9 +6,7 @@ session_start();
 
 if (isset($_POST['email'])){
   $email = stripslashes($_REQUEST['email']); 
-  //$email = mysqli_real_escape_string($dbh, $email);
   $password = stripslashes($_REQUEST['password']);
-//$password = mysqli_real_escape_string($dbh, $password);
   $query = $dbh->prepare('SELECT * FROM user WHERE email = :email and password=:password');
   $query->execute(['email' => $email, 'password' => $password]);
   $query = $query->fetch();

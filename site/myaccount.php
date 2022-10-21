@@ -4,6 +4,8 @@ require 'includes/database.php';
   if(isset($_POST['newEmail'])){
     $email = stripslashes($_POST['email']); 
     $password = stripslashes($_REQUEST['password']);
+    $newPassword = stripslashes($_POST['newPassword']); 
+    $newPasswordConfirmation = stripslashes($_POST['newPasswordConfirmation']);
     $newEmail = stripslashes($_POST['newEmail']); 
     $query = $dbh->prepare('SELECT * FROM user WHERE email = :email and password = :password');
     $query->execute(['email' => $email, 'password' => $password]);
@@ -98,6 +100,8 @@ require 'includes/database.php';
                 <input type="email" placeholder="Nouveau Mail" name='newEmail' required />
 
                 <input type="password" placeholder="Mot de passe" name='password' required />
+
+                <input type="password" placeholder="Confirmer le mot de passe" name='NewPasswordConfirmation' required />
             </div>
 
             <p class="texte_espace">ㅤ</p>
