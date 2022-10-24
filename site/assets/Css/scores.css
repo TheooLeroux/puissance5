@@ -80,9 +80,35 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: 60%;
+    margin-left: 65%;
     height: 50px;
-    width: 20%;
+    width:300px;
+    padding-bottom: 10px;
+}
+
+
+
+.button_recherche{
+    background-color: #bd5ef6;
+    color: white;
+    padding: 5px;
+    font-size: small;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width:180px;
+}
+
+.button_recherche .valider{
+    color: white;
+    text-decoration: none ;
+    background-color: #b144f1;
+    border: none;
+    border-radius: 5px;
+}
+
+.button_recherche .valider:hover{
+    background-color: #221f49;
 }
 
 .dropbtn {
@@ -93,6 +119,8 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    height: 50px;
+    width: 75px;
 }
   
   /* Style for dropdown content */

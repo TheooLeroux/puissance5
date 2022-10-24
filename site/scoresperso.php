@@ -29,21 +29,19 @@ require "view/header.inc.php";
     <div class="flexBody02">
 
         <div class="nav_button">
-
             <div class="button_score">
-                <div class="dropdown">
-                    <button class="dropbtn">Filtrer ⬇ </button>
-                    <div class="dropdown-content">
-                        <div><a href="scoresperso.php">Afficher uniquement mes scores</a></div>
-                        <div><a href="scoresdifficulte.php">Trier par difficulté</a></div>
-                    </div>
-                </div>
+                <form class="button_recherche" action="scoresperso.php" method="post"><input name="nom" type="text" placeholder="Pseudo"/>
+                <input  class="valider" type="submit" value="Afficher le score"></form>
+                    
 
                 <div class="dropdown">
                     <button class="dropbtn">Trier ⬇ </button>
                     <div class="dropdown-content">
                         <div><a href="scores.php">Trier par scores</a></div>
                         <div><a href="scoresdate.php">Trier par date</a></div>
+                        <div><a href="scoresdifficulte.php">Trier par difficulté</a></div>
+                        
+                        
                     </div>
                 </div>
 
@@ -67,9 +65,10 @@ require "view/header.inc.php";
             require "includes/database.php";
             ?>
             <?php
+                $nom=htmlspecialchars($_POST['nom']);
                 error_reporting(0);
                 for($x=1;$x<11;$x++){
-                    $recup = $dbh->query("SELECT * FROM score WHERE id_Player = ".$x." AND Player = 'Hamza'");
+                    $recup = $dbh->query("SELECT * FROM score WHERE id_Player = ".$x." AND Player = '$nom' ");
                     $row=$recup->fetch()
             ?>
                     <tr>
