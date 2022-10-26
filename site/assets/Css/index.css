@@ -59,7 +59,7 @@
 /*--BODY 01--*/
 
 body {
-    background-color: rgb(19, 16, 46);
+    background-color: #11102f;
 }
 
 /*--images--*/
@@ -271,9 +271,8 @@ body {
 
 .box4 {
     display: flex;
-    background-image: url(https://media.discordapp.net/attachments/301039123160891402/1030822146416574525/test04.png);
+    background: url(https://media.discordapp.net/attachments/301039123160891402/1030822146416574525/test04.png);
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
     flex-direction: row;
     align-items: center;

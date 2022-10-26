@@ -1,12 +1,13 @@
 <?php
 require 'includes/database.php';
-require 'view/header.inc.php';
 
 
-
+session_start();
   if(isset($_POST['newEmail'])){
     $email = stripslashes($_POST['email']); 
     $password = stripslashes($_REQUEST['password']);
+    $newPassword = stripslashes($_POST['newPassword']); 
+    $PasswordConfirmation = stripslashes($_POST['PasswordConfirmation']);
     $newEmail = stripslashes($_POST['newEmail']); 
     $query = $dbh->prepare('SELECT * FROM user WHERE email = :email and password = :password');
     $query->execute(['email' => $email, 'password' => $password]);
@@ -26,6 +27,7 @@ require 'view/header.inc.php';
     $newquery=$dbh->prepare('UPDATE user SET password=:newPassword WHERE id=:id');
     $newquery->execute(['newPassword' => $newPassword, 'id' => $query[0]]);
     }
+    session_unset();
   }
 ?>
 
@@ -45,6 +47,10 @@ require 'view/header.inc.php';
 </head>
 
 <body>
+
+<?php
+require "view/header.inc.php";
+?>
 
 
 
@@ -71,6 +77,8 @@ require 'view/header.inc.php';
                 <input type="email" placeholder="Nouveau Mail" name='newEmail' required />
 
                 <input type="password" placeholder="Mot de passe" name='password' required />
+
+                <input type="password" placeholder="Confirmer le mot de passe" name='PasswordConfirmation' required />
                 
             </div>
 

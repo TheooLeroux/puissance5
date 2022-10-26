@@ -6,51 +6,13 @@
     transition: all 0.5s;
 }
 
-/*--HEADER--*/
-
-/*--HEADER : Logo--*/
-
-.flexNav img {
-    width: 250px;
-    height: auto;
-}
-
-/*--HEADER : Navigation--*/
-
-body header div nav a {
-    margin: 10px;
-    color: white;
-    font-size: small;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-body header div nav a:hover {
-    color: #bd5ef6;
-}
-
-.flexNav div nav img {
-    /*image compte*/
-    height: 12px;
-    width: 12px;
-}
-
-/*--HEADER : Background--*/
-
-.flexNav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background: rgb(19, 16, 46);
-    height: 90px;
-    width: auto;
-
-}
 
 /*--BANNIERE--*/
 
 .flexBody01 {
     background: url(https://wallpaperaccess.com/full/1615368.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     height: 150px;
@@ -79,7 +41,7 @@ body div h1 {
 .flexBody02 {
     display: flex;
     justify-content: center;
-    height: 500px;
+    height: 600px;
     align-items: center;
     background-color: rgb(19, 16, 46);
 }
@@ -92,11 +54,6 @@ form {
 }
 
 
-.loginpass{
-    margin-top: 10px;
-    color: white;
-}
-
 form a {
     text-align: center;
 }
@@ -105,6 +62,10 @@ form a {
 body .flexBody02 form h1 {
     color: #bd5ef6;
     text-align: center;
+    width: 100%;
+    max-width: fit-content;
+    margin-bottom: 30px;
+
     background: 
     linear-gradient(#bd5ef6 0 0) no-repeat
     calc(200% - var(--i,0)*100%) 100% / 200% calc(0%*var(--i,0) + .08em);
@@ -154,83 +115,27 @@ form button {
     box-shadow: 0px 5px 0px #7622a7;
 }
 
-
-/*--FOOTER--*/
-
-footer {
-    display: flex;
-    flex-direction: row;
+.echo {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    color: rgb(255, 238, 0);
     font-size: small;
+    width: 100%;
+}
+
+.echo span{
+    color: red;
+    text-decoration: underline;
+}
+
+.loginpass {
+    margin-top: 10px;
     color: white;
-    padding-top: 75px;
-    background-color: #0D0B26;
-    font-family: 'Roboto', sans-serif;
+    text-align: center;
 }
 
-footer h1 {
-    margin-bottom: 25px;
-    color: #FFFFFF;
-}
-
-footer h2 {
-    color: darkgray;
-    font-size: small;
-}
-
-
-/*--FOOTER COTE GAUCHE--*/
-
-
-.information_footer p {
-    text-align: start;
-    margin-left: 0px;
-
-}
-
-.information_liste_footer {
-
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    margin-bottom: 25px;
-    list-style-type: none;
-}
-
-img {
-    flex-direction: row;
-    width: 30px;
-    height: 30px;
-}
-
-footer img:hover {
-    border-radius: 10 10 20;
-    box-shadow: 5px 5px 40px #bd5ef6;
-}
-
-
-
-.information_footer h2 span {
-    color: #bd5ef6;
-
-}
-
-/*--COPYRIGHT--*/
-
-.copyright_footer {
-    margin-top: 100px;
-    margin-bottom: 25px;
-
-    color: darkgray;
-}
-
-/*--FOOTER COTE DROIT--*/
-
-
-.power_footer h2 a {
-    text-decoration: none;
-    color: #878787;
-}
-
-.power_footer h2 span {
+.loginpass02 {
+    text-align: center;
     color: #bd5ef6;
 }

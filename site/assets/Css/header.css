@@ -19,6 +19,7 @@ body header div nav a {
 
 body header div nav a:hover {
     color: #bd5ef6;
+    text-decoration: overline;
 }
 
 .flexNav div nav img {
@@ -33,7 +34,7 @@ body header div nav a:hover {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background: rgb(19, 16, 46);
+    background: #11102f;
     height: 90px;
     width: auto;
 

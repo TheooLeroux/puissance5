@@ -1,6 +1,7 @@
 <?php
-require "includes/database.php";
-require "view/header.inc.php";
+    require "includes/database.php";
+
+    session_start();
 ?>
 
 
@@ -16,6 +17,10 @@ require "view/header.inc.php";
 </head>
 
 <body>
+
+<?php
+    require "view/header.inc.php";
+?>
 
 
     <div class="flexBody01">

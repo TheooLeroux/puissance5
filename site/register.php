@@ -1,66 +1,5 @@
 <?php
-require "view/header.inc.php";
-?>
-
-
-<?php
 require "includes/database.php";
-
-
-if (isset($_POST["email"]) && isset($_POST["name"]) && isset($_POST["password"]) && isset($_POST["confirm_password"])) {
-    $email = htmlspecialchars($_POST["email"]);
-    $password = $_POST["password"];
-    $password_repeat = $_POST["confirm_password"];
-    $name = htmlspecialchars($_POST["name"]);
-    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        if (strlen($name) >= 4) {
-            if($_POST["password"] == $_POST["confirm_password"]){
-                $pattern = '/^(?=.*[!@#$%^&*-])(?=.*[0-9])(?=.*[A-Z]).{8,20}$/ ';
-                if (preg_match($pattern, $password)) {
-                $pom_test = $dbh->prepare('SELECT * FROM user WHERE email = :email');
-                $pom_test->execute(['email' => $email]);
-                $pom_test = $pom_test->fetch();
-                if (empty($pom_test)){
-                    $options = [
-                        'cost' => 12,
-                    ];
-                    $passwordhash = password_hash($password, PASSWORD_BCRYPT, $options);
-                    $insert = $dbh->prepare('INSERT INTO user (email, name, password) VALUES (:email, :name, :password)');
-                 
-                 
-                    $redirect = $insert->execute(array(
-
-                    'email' => $email,
-             
-                    'name' => $name,
-             
-                    'password' => $password
-             
-             
-                    ));
-                  if($redirect){
-                        header("Location: login.php");
-                    }
-
-                    
-                }else{
-                    echo "Votre compte existe.";
-                }
-                }else{
-                    echo "ERREUR : Votre mot de passe doit contenir au moins 8 caractères dont au moins 1 lettre minuscule, 1 lettre majuscule, 1 chiffre et 1 caractère spécial (!@#$%^&*-).";
-                }
-            }else{
-                echo "ERREUR : Les mots de passe ne correspondent pas.";
-            }
-        }else {
-            echo "ERREUR : Le pseudo doit contenir minimum 4 caractères.";
-        }
-    }else {
-        echo "ERREUR : L'adresse mail n'est pas au format valide.";
-    }
-    
-}
-
 ?>
 
 
@@ -81,6 +20,9 @@ if (isset($_POST["email"]) && isset($_POST["name"]) && isset($_POST["password"])
 
 <body>
 
+<?php
+require "view/header.inc.php";
+?>
 
     <!-- BANNIERE -->
 
@@ -96,16 +38,71 @@ if (isset($_POST["email"]) && isset($_POST["name"]) && isset($_POST["password"])
 
             <h1>Créer un compte</h1>
 
-            <p class="texte_espace">ㅤ </p>
-
             <div class="inputs">
+
+            <?php
+            if (isset($_POST["email"]) && isset($_POST["name"]) && isset($_POST["password"]) && isset($_POST["confirm_password"])) {
+                $email = htmlspecialchars($_POST["email"]);
+                $password = $_POST["password"];
+                $password_repeat = $_POST["confirm_password"];
+                $name = htmlspecialchars($_POST["name"]);
+                if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                    if (strlen($name) >= 4) {
+                        if($_POST["password"] == $_POST["confirm_password"]){
+                            $pattern = '/^(?=.*[!@#$%^&*-])(?=.*[0-9])(?=.*[A-Z]).{8,20}$/ ';
+                            if (preg_match($pattern, $password)) {
+                            $pom_test = $dbh->prepare('SELECT * FROM user WHERE email = :email');
+                            $pom_test->execute(['email' => $email]);
+                            $pom_test = $pom_test->fetch();
+                            if (empty($pom_test)){
+                                $options = [
+                                    'cost' => 12,
+                                ];
+                                $passwordhash = password_hash($password, PASSWORD_BCRYPT, $options);
+                                $insert = $dbh->prepare('INSERT INTO user (email, name, password) VALUES (:email, :name, :password)');
+                             
+                             
+                                $redirect = $insert->execute(array(
+            
+                                'email' => $email,
+                         
+                                'name' => $name,
+                         
+                                'password' => $password
+                         
+                         
+                                ));
+                              if($redirect){
+                                    header("Location: login.php");
+                                }
+            
+                                
+                            }else{
+                                echo '<p class="echo"> ⚠️ <span>ERREUR</span> : Cet email est déjà associé à un compte.</p>';
+                            }
+                            }else{
+                                echo '<p class="echo"> ⚠️ <span>ERREUR</span> : Votre mot de passe doit contenir au moins 8 caractères dont au moins 1 lettre minuscule, 1 lettre majuscule, 1 chiffre et 1 caractère spécial (!@#$%^&*-).</p>';
+                            }
+                        }else{
+                            echo '<p class="echo">⚠️ <span>ERREUR</span> : Les mots de passe ne correspondent pas.</p>';
+                        }
+                    }else {
+                        echo '<p class="echo">⚠️ <span>ERREUR</span> : Le pseudo doit contenir minimum 4 caractères.</p>';
+            
+                    }
+                }else {
+                    echo '<p class="echo">⚠️ <span>ERREUR</span> : Adresse mail non conforme.</p>';
+                }
+                
+            }
+            
+            ?>
                
-                    
                       
                 <input type="email" placeholder="exemple@mail.com" name="email" required />
               
                 <input type="text" placeholder="Pseudo" name="name" required />
-               
+            
                 <input type="password" placeholder="Mot de passe" name="password" required />
                
                 <input type="password" placeholder="Confirmer le mot de passe" name="confirm_password" required />
@@ -113,7 +110,7 @@ if (isset($_POST["email"]) && isset($_POST["name"]) && isset($_POST["password"])
 
             </div>
             
-            <p class="loginpass">Vous avez déjà un compte ?</p><a href="login.php"><p>Cliquer ici</p></a>
+            <p class="loginpass">Vous avez déjà un compte ?</p><a href="login.php"><p class="loginpass02" >Cliquer ici</p></a>
             <div>
                 <button class="button_connexion" type="submit" >
                     Valider</button>

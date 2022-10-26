@@ -1,5 +1,5 @@
 <?php
-$dsn = 'mysql:host=localhost;dbname=pom_test;charset=utf8';
+$dsn = 'mysql:host=localhost;dbname=powerofmemory;charset=utf8';
 $userofdb = 'root';
 $passwordofdb = "";
 try {

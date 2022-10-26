@@ -48,6 +48,7 @@ img {
 footer img:hover {
     border-radius: 10 10 20;
     box-shadow: 5px 5px 40px #bd5ef6;
+    transition: all(0.1s);
 }
 
 

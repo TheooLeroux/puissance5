@@ -6,52 +6,14 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-/*--HEADER--*/
-
-/*--HEADER : Logo--*/
-
-.flexNav img {
-    width: 250px;
-    height: auto;
-}
-
-/*--HEADER : Navigation--*/
-
-body header div nav a {
-    margin: 10px;
-    color: white;
-    font-size: small;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-body header div nav a:hover {
-    color: #bd5ef6;
-}
-
-.flexNav div nav img {
-    /*image compte*/
-    height: 12px;
-    width: 12px;
-}
-
-/*--HEADER : Background--*/
-
-.flexNav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background: rgb(19, 16, 46);
-    height: 90px;
-    width: auto;
-
-}
 
 /*--BANNIERE--*/
 
 
 .flexBody01 {
     background: url(https://wallpaperaccess.com/full/1615368.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     height: 150px;
@@ -69,7 +31,7 @@ body header div nav a:hover {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 500px;
+    height: 600px;
     align-items: center;
     background-color: rgb(19, 16, 46);
 }
@@ -79,8 +41,8 @@ form {
     flex-direction: column;
     justify-content: center;
     border-radius: 10px;
-    background-color: rgb(13, 11, 38);
-    width: 100%;
+    background-color: #0D0B26;
+    width: 30%;
 }
 
 body .flexBody02 form h1 {
@@ -159,91 +121,3 @@ body div h1 {
     letter-spacing: 5px;
 }
 
-
-/*-------------------------------FOOTER-------------------------------*/
-
-footer {
-    display: flex;
-    flex-direction: row;
-    font-size: small;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: white;
-    padding-top: 75px;
-
-    background-color: #0D0B26;
-
-    font-family: 'Roboto', sans-serif;
-}
-
-footer h1 {
-    margin-bottom: 25px;
-    color: #FFFFFF;
-}
-
-footer h2 {
-    color: darkgray;
-    font-size: small;
-}
-
-
-/*-------------------------------Information-------------------------------*/
-
-.information_footer p {
-    text-align: start;
-    margin-left: 0px;
-
-}
-
-.information_liste_footer {
-
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-
-
-    margin-bottom: 25px;
-
-    list-style-type: none;
-}
-
-img {
-    flex-direction: row;
-    width: 30px;
-    height: 30px;
-}
-
-.information_footer h2 span {
-    color: #bd5ef6;
-
-}
-
-
-
-
-/*-------------------------------Copyright-------------------------------*/
-
-.copyright_footer {
-    margin-top: 100px;
-    margin-bottom: 25px;
-
-    color: darkgray;
-}
-
-
-/*-------------------------------Power of Memory-------------------------------*/
-
-.power_footer h2 a {
-    text-decoration: none;
-    color: #878787;
-}
-
-.power_footer h2 span {
-    color: #bd5ef6;
-}
-
-body div p {
-    color: rgb(117, 114, 134);
-    font-size: small;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin-left: 10%;
-}

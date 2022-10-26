@@ -1,29 +1,7 @@
 <?php
-require "view/header.inc.php";
-?>
-
-<?php
 require "includes/database.php";
 
-
 session_start();
-
-if (isset($_POST['email'])){
-  $email = stripslashes($_REQUEST['email']); 
-  //$email = mysqli_real_escape_string($dbh, $email);
-  $password = stripslashes($_REQUEST['password']);
-//$password = mysqli_real_escape_string($dbh, $password);
-  $query = $dbh->prepare('SELECT * FROM user WHERE email = :email and password=:password');
-  $query->execute(['email' => $email, 'password' => $password]);
-  $query = $query->fetch();
-  if($query[1]==$email){
-      $_SESSION['email'] = $email;
-    header("Location: memory.php");
-  }else{
-    $message = "ERREUR : Le nom d'utilisateur ou le mot de passe est incorrect.";
-  }
-  
-}
 ?>
 
 
@@ -42,6 +20,11 @@ if (isset($_POST['email'])){
 
 <body>
 
+<?php
+require "view/header.inc.php";
+?>
+
+
     <!-- BANNIERE -->
 
     <div class="flexBody01">
@@ -55,15 +38,38 @@ if (isset($_POST['email'])){
         <form method="post" name="login">
 
             <h1>Connectez-vous</h1>
-            <p class="texte_espace">ㅤ </p>
+            
+            <?php
+              error_reporting(0);
+              if (isset($_POST['email'])){
+                $email = stripslashes($_REQUEST['email']); 
+                //$email = mysqli_real_escape_string($dbh, $email);
+                $password = stripslashes($_REQUEST['password']);
+                //$password = mysqli_real_escape_string($dbh, $password);
+                $query = $dbh->prepare('SELECT * FROM user WHERE email = :email and password=:password');
+                $query->execute(['email' => $email, 'password' => $password]);
+                $user = $query->fetch();
+                if($user[1]==$email){
+                  
+                    $_SESSION['email'] = $email;
+                    $_SESSION['id'] = $user[0];
+                
+                  header("Location: memory.php");
+                }else{
+                  echo '<p class="echo"> ⚠️ <span>ERREUR</span> : Le mail ou le mot de passe inscrit est inccorect.</p>';
+                }
+              }
+        
+            ?>
 
             <div class="inputs">
 
                 <input type="email" placeholder="exemple@mail.com" name="email" required/>
                 <input type="password" placeholder="Mot de passe" name="password" required/>
+                
             </div>
 
-            <p class="texte_espace">ㅤ</p>
+            <p class="loginpass">Vous n'avez pas encore de compte ?</p><a href="register.php"><p class="loginpass02" >Créer en un ici !</p></a>
 
             <div>
                 <button class="button_connexion" type="submit" >
