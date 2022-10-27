@@ -180,11 +180,45 @@ video.fullscreen02 {
 
 #imgreplaycroix{
     position: absolute;
-    margin-left: 280px;
+    margin-left: 205px;
     width: auto;
     height: 30px;
     margin-top: -20px;
-    cursor: pointer;
+}
+
+#dommage{
+    position: absolute;
+    margin-left: -100px;
+    width: auto;
+    height: 30px;
+    opacity: 0;
+}
+
+#img_dommage{
+    position: absolute;
+    margin-left: 70px;
+    width: auto;
+    height: 40px;
+    margin-top: -5px;
+    opacity: 0;
+}
+
+#bravo{
+    position: absolute;
+    margin-left: -70px;
+    width: auto;
+    height: 30px;
+    opacity: 0;
+}
+
+#img_bravo{
+    position: absolute;
+    width: auto;
+    height: 40px;
+    margin-top: -5px;
+    margin-left: 40px;
+    opacity: 0;
+
 }
 
 #imgreplaycroix:hover{
@@ -195,7 +229,7 @@ video.fullscreen02 {
 }
 
 .popUpReplay p {
-    margin-top: 50px;
+    margin-top: 70px;
     font-size: x-large;
     color: white;
 }
@@ -220,13 +254,6 @@ video.fullscreen02 {
     font-size: 30px;
 }
 
-.haut_popupR img {
-    width: auto;
-    height: 40px;
-    margin-top: -5px;
-    margin-left: 10px;
-
-}
 
 .button_returnindex {
     display: flex;

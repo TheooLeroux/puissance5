@@ -45,7 +45,7 @@ require "view/header.inc.php";
 
             </div>
 
-            <p>Votre score est de : <span class="score_player"> 9min 56sec 28ms</span>.</p>
+            <p>Votre score est de : <span class="score_player"> 00min 00sec 00ms</span>.</p>
 
             <div class="bas_popup">
 

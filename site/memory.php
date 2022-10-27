@@ -55,7 +55,7 @@ require "view/header.inc.php";
                 <div class="chrono">
                     <p><img src="https://media.discordapp.net/attachments/301039123160891402/1033698633310273597/Projet_sans_titre.gif" alt=""></p>
                     <button class="button_chrono" type="">
-                    <div id="minute">00</div>m :  <div id="second">00</div>s :  <div id="milisecond">00</div>ms</button>
+                    <div id="minute">00</div>m :  <div id="second">00</div>s :  <div id="milisecond">00</div>ms</button>
                 </div>
 
             </div>
@@ -65,13 +65,15 @@ require "view/header.inc.php";
 
                 <div class="haut_popupR">
 
-                    <h1>Bravo !</h1>
-                    <img src="https://media.discordapp.net/attachments/301039123160891402/1033737445193302096/u1F973.png" alt="">
-                    <img id=imgreplaycroix src="https://media.discordapp.net/attachments/301039123160891402/1034877252787253308/croix.png" alt="">        
+                    <h1 id="dommage">Dommage...</h1>
+                    <img id="img_dommage" src="https://media.discordapp.net/attachments/301039123160891402/1035129345448091718/u1F62A.png" alt="">
+                    <h1 id="bravo">Bravo !</h1>
+                    <img id="img_bravo" src="https://media.discordapp.net/attachments/301039123160891402/1033737445193302096/u1F973.png" alt="">
+                    <img id="imgreplaycroix" src="https://media.discordapp.net/attachments/301039123160891402/1034877252787253308/croix.png" alt="">        
 
                 </div>
 
-                <p>Votre score est de : <span class="score_player"> 9min 56sec 28ms</span>.</p>
+                <p>Votre score est de : <span id="score_player" class="score_player"> 0000</span> points.</p>
 
                 <div class="bas_popupR">
                     

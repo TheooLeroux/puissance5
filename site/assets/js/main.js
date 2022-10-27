@@ -17,11 +17,21 @@ var TextError = document.getElementById('text_erreur');
 var popUpReplay = document.getElementById('popUpReplay');
 var imgreplaycroix = document.getElementById('imgreplaycroix');
 
+var bravo = document.getElementById('bravo');
+var img_bravo = document.getElementById('img_bravo');
+
+var dommage = document.getElementById('dommage');
+var img_dommage = document.getElementById('img_dommage');
+
+
+
+
 
 var lancerPartie = 0;
 var veriffin = 0;
 var themeChoisi = "";
 var niveauChoisi = "";
+var score=10000;
 
 
 
@@ -235,23 +245,22 @@ function getImageFacile(valeur){
     var imgTxt = "";
     if(themeChoisi=="Nourriture"){
     switch(valeur){
-        case 1 : imgTxt += "assets/Image/Apple/697.png";
+        case 1 : imgTxt += "https://media.discordapp.net/attachments/301039123160891402/1033503212377997312/u1F347.png";
         break;
-        case 2 : imgTxt += "assets/Image/Apple/699.png";
+        case 2 : imgTxt += "https://media.discordapp.net/attachments/301039123160891402/1033503212742910022/u1F353.png";
         break;
-        case 3 : imgTxt += "assets/Image/Apple/693.png";
+        case 3 : imgTxt += "https://media.discordapp.net/attachments/301039123160891402/1033503213074268230/u1F354.png";
         break;
-        case 4 : imgTxt += "assets/Image/Apple/743.png";
+        case 4 : imgTxt += "https://media.discordapp.net/attachments/301039123160891402/1033503213564985375/u1F355.png";
         break;
-        case 5 : imgTxt += "assets/Image/Apple/698.png";
+        case 5 : imgTxt += "https://media.discordapp.net/attachments/301039123160891402/1033504336250159125/u1F352.png";
         break;
-        case 6 : imgTxt += "assets/Image/Apple/681.png";
+        case 6 : imgTxt += "https://media.discordapp.net/attachments/301039123160891402/1033503224835088454/u1F351.png";
         break;
-        case 7 : imgTxt += "assets/Image/Apple/662.png";
+        case 7 : imgTxt += "https://media.discordapp.net/attachments/301039123160891402/1033503214697451610/u1F346.png";
         break;
-        case 8 : imgTxt += "assets/Image/Apple/668.png";
+        case 8 : imgTxt += "https://media.discordapp.net/attachments/301039123160891402/1033503215037198396/u1F965.png";
         break;
-
 
         
     
@@ -261,21 +270,21 @@ function getImageFacile(valeur){
 }
 else if (themeChoisi=="Smiley"){
     switch(valeur){
-        case 1 : imgTxt += "assets/Image/Apple/2.png";
+        case 1 : imgTxt += "https://media.discordapp.net/attachments/301039123160891402/1035104383932846110/u1F973.png";
         break;
-        case 2 : imgTxt += "assets/Image/Apple/3.png";
+        case 2 : imgTxt += "https://media.discordapp.net/attachments/301039123160891402/1035104383932846110/u1F973.png";
         break;
-        case 3 : imgTxt += "assets/Image/Apple/4.png";
+        case 3 : imgTxt += "https://media.discordapp.net/attachments/301039123160891402/1035104384771690526/u1F975.png";
         break;
-        case 4 : imgTxt += "assets/Image/Apple/5.png";
+        case 4 : imgTxt += "https://media.discordapp.net/attachments/301039123160891402/1035104385417609246/u1F976.png";
         break;
-        case 5 : imgTxt += "assets/Image/Apple/6.png";
+        case 5 : imgTxt += "https://media.discordapp.net/attachments/301039123160891402/1035104386105495672/u1F923.png";
         break;
-        case 6 : imgTxt += "assets/Image/Apple/7.png";
+        case 6 : imgTxt += "https://media.discordapp.net/attachments/301039123160891402/1035104386625568788/u1F922.png";
         break;
-        case 7 : imgTxt += "assets/Image/Apple/8.png";
+        case 7 : imgTxt += "https://cdn.discordapp.com/attachments/301039123160891402/1035104387137294346/u1F631.png";
         break;
-        case 8 : imgTxt += "assets/Image/Apple/9.png";
+        case 8 : imgTxt += "https://media.discordapp.net/attachments/301039123160891402/1035104387518959656/u1F46E.5.M.png";
         break;
 
 
@@ -287,21 +296,21 @@ else if (themeChoisi=="Smiley"){
 }
 else{
     switch(valeur){
-        case 1 : imgTxt += "assets/Image/Apple/886.png";
+        case 1 : imgTxt += "https://media.discordapp.net/attachments/301039123160891402/1035102895076544533/u1F9EF.png";
         break;
-        case 2 : imgTxt += "assets/Image/Apple/880.png";
+        case 2 : imgTxt += "https://media.discordapp.net/attachments/301039123160891402/1035102895529533540/u1F9F8.png";
         break;
-        case 3 : imgTxt += "assets/Image/Apple/879.png";
+        case 3 : imgTxt += "https://media.discordapp.net/attachments/301039123160891402/1035102896083189760/u1F97E.png";
         break;
-        case 4 : imgTxt += "assets/Image/Apple/901.png";
+        case 4 : imgTxt += "https://media.discordapp.net/attachments/301039123160891402/1035102896552939550/u1F6F5.png";
         break;
-        case 5 : imgTxt += "assets/Image/Apple/895.png";
+        case 5 : imgTxt += "https://media.discordapp.net/attachments/301039123160891402/1035102897559572543/u1F302.png";
         break;
-        case 6 : imgTxt += "assets/Image/Apple/919.png";
+        case 6 : imgTxt += "https://media.discordapp.net/attachments/301039123160891402/1035102897974820925/u1F511.png";
         break;
-        case 7 : imgTxt += "assets/Image/Apple/915.png";
+        case 7 : imgTxt += "https://media.discordapp.net/attachments/301039123160891402/1035102898985639966/u26BD.png";
         break;
-        case 8 : imgTxt += "assets/Image/Apple/913.png";
+        case 8 : imgTxt += "https://media.discordapp.net/attachments/301039123160891402/1035103850601918564/unknown.png";
         break;
 
 
@@ -343,6 +352,8 @@ function verifFacile(bouton){
                         if(veriffin==8){
                             gagne()
                             popUpReplay.style.zIndex = '5';
+                            bravo.style.opacity = '1';
+                            img_bravo.style.opacity = '1';
                         }
                     }
                     afficherTableauFacile();
@@ -688,6 +699,9 @@ function verifMoyen(bouton){
                     if(veriffin==32){
                         gagne()
                         popUpReplay.style.zIndex = '5';
+                        bravo.style.opacity = '1';
+                        img_bravo.style.opacity = '1';
+                        
                     }
                 }
                 afficherTableauMoyen();
@@ -1274,6 +1288,8 @@ function verifExtreme(bouton){
                     if(veriffin==72){
                         gagne()
                         popUpReplay.style.zIndex = '5';
+                        bravo.style.opacity = '1';
+                        img_bravo.style.opacity = '1';
                     }
                 }
                 afficherTableauExtreme();
@@ -2683,6 +2699,8 @@ function verifImpossible(bouton){
                     if(veriffin==200){
                         gagne()
                         popUpReplay.style.zIndex = '5';
+                        bravo.style.opacity = '1';
+                        img_bravo.style.opacity = '1';
                     }
                 }
                 afficherTableauImpossible();
@@ -2778,6 +2796,7 @@ function second(){
         return;
     }
     else{
+    score=score-5
     souvs=parseInt(souvs)
     souvs=souvs+1
     if (souvs<10){
@@ -2812,17 +2831,15 @@ function minute(){
 }
 function gagne(){
     endi=2
-    return;
-}
-
-function end(){
-    endi=1
+    document.getElementById('score_player').innerHTML = score;
     return;
 }
 
 function end(){
     endi=1
     popUpReplay.style.zIndex = '5';
+    dommage.style.opacity = '1';
+    img_dommage.style.opacity = '1';
     return;
 }
 
