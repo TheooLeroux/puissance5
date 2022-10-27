@@ -61,6 +61,35 @@ require "view/header.inc.php";
             </div>
 
 
+        <div id="popUpReplay" class="popUpReplay">
+
+                <div class="haut_popupR">
+
+                    <h1>Bravo !</h1>
+                    <img src="https://media.discordapp.net/attachments/301039123160891402/1033737445193302096/u1F973.png" alt="">
+                    <img id=imgreplaycroix src="https://media.discordapp.net/attachments/301039123160891402/1034877252787253308/croix.png" alt="">        
+
+                </div>
+
+                <p>Votre score est de : <span class="score_player"> 9min 56sec 28ms</span>.</p>
+
+                <div class="bas_popupR">
+                    
+                    <form>
+                    <button class="button_returnindex" type="submit" formaction="index.php" >
+                        RETOURNER A L'ACCUEIL</button>
+                    </form>
+
+
+                    <form>
+                    <button class="button_replay" type="submit" formaction="memory.php" >
+                        REJOUER</button>
+                    </form>
+                    
+                </div>
+
+            </div>
+                
         <div class="flexBody03" id="flexBody03">
 
             <video class="fullscreen02" src="assets/Image/videofondpopup.mp4" playsinline autoplay muted loop>
@@ -113,6 +142,8 @@ require "view/header.inc.php";
                         </div>
             </div>
 
+            
+
     </div>
 
     <!-- CHAT -->
@@ -151,14 +182,14 @@ require "view/header.inc.php";
         <div class="body_chat">
             
             <div class="user_chat01">
-                <p class="user_name01">Jérémy</p>
-                <p class="user_message01">Salut Mathis ça va ?</p>
+                <p class="user_name01">Didier le réparateur</p>
+                <p class="user_message01">🚨 LE CHAT EST EN PANNE j'ai coupé le mauvais fil ! 😅</p>
                 <p class="time_message01">Aujourd'hui à 11h36</p>
             </div>
 
             <div class="user_chat02">
                 <p class="user_name02">Moi</p>
-                <p class="user_message02">Oui nickel et toi !? 🥰</p>
+                <p class="user_message02">Ohhh non zut alors 😥</p>
                 <p class="time_message02">Aujourd'hui à 11h38</p>
             </div>
 

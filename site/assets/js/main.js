@@ -6,11 +6,6 @@ var buttonT2 = document.getElementById('button_t02');
 var buttonT3 = document.getElementById('button_t03');
 var flexBody03 = document.getElementById('flexBody03');
 var fullscreen = document.getElementById('fullscreen');
-fullscreen.style.opacity = '1';
-
-
-
-
 
 var buttonFac = document.getElementById('button_facile');
 var buttonMoy = document.getElementById('button_moyen');
@@ -19,10 +14,12 @@ var buttonImp = document.getElementById('button_impossible');
 
 var buttonPlay = document.getElementById('buttonPlay');
 var TextError = document.getElementById('text_erreur');
+var popUpReplay = document.getElementById('popUpReplay');
+var imgreplaycroix = document.getElementById('imgreplaycroix');
 
 
 var lancerPartie = 0;
-
+var veriffin = 0;
 var themeChoisi = "";
 var niveauChoisi = "";
 
@@ -86,8 +83,7 @@ var button_selectLevel04 = function () {
 var button_play = function () {   
     
     if (niveauChoisi && themeChoisi != "") {
-        
-        timer()
+
         console.log(niveauChoisi);
         flexBody03.style.opacity = '0'; 
         flexBody03.style.zIndex = '-10';
@@ -98,6 +94,10 @@ var button_play = function () {
         TextError.style.opacity = '1';
     }
     
+}
+
+var fermerPopUp = function(){
+    popUpReplay.style.zIndex = '-5';
 }
 
 
@@ -338,6 +338,13 @@ function verifFacile(bouton){
                         tabJeuFacile[ligne][colonne] = 0;
                         tabJeuFacile[oldSelection[0]][oldSelection[1]] = 0;
                     }
+                    else{
+                        veriffin=veriffin+1
+                        if(veriffin==8){
+                            gagne()
+                            popUpReplay.style.zIndex = '5';
+                        }
+                    }
                     afficherTableauFacile();
                     ready = true;
                     nbAffiche = 0;
@@ -347,6 +354,7 @@ function verifFacile(bouton){
 
             } else {
                 oldSelection = [ligne, colonne];
+                
             }
 
         }
@@ -653,7 +661,6 @@ else{
 
 
 
-
 function verifMoyen(bouton){
 
     if(ready){
@@ -675,6 +682,13 @@ function verifMoyen(bouton){
                 if (tabJeuMoyen[ligne][colonne] !== tabResultatMoyen[oldSelection[0]][oldSelection[1]]) {
                     tabJeuMoyen[ligne][colonne] = 0;
                     tabJeuMoyen[oldSelection[0]][oldSelection[1]] = 0;
+                }
+                else{
+                    veriffin=veriffin+1
+                    if(veriffin==32){
+                        gagne()
+                        popUpReplay.style.zIndex = '5';
+                    }
                 }
                 afficherTableauMoyen();
                 ready = true;
@@ -1254,6 +1268,13 @@ function verifExtreme(bouton){
                 if (tabJeuExtreme[ligne][colonne] !== tabResultatExtreme[oldSelection[0]][oldSelection[1]]) {
                     tabJeuExtreme[ligne][colonne] = 0;
                     tabJeuExtreme[oldSelection[0]][oldSelection[1]] = 0;
+                }
+                else{
+                    veriffin=veriffin+1
+                    if(veriffin==72){
+                        gagne()
+                        popUpReplay.style.zIndex = '5';
+                    }
                 }
                 afficherTableauExtreme();
                 ready = true;
@@ -2657,6 +2678,13 @@ function verifImpossible(bouton){
                     tabJeuImpossible[ligne][colonne] = 0;
                     tabJeuImpossible[oldSelection[0]][oldSelection[1]] = 0;
                 }
+                else{
+                    veriffin=veriffin+1
+                    if(veriffin==200){
+                        gagne()
+                        popUpReplay.style.zIndex = '5';
+                    }
+                }
                 afficherTableauImpossible();
                 ready = true;
                 nbAffiche = 0;
@@ -2722,48 +2750,92 @@ function milisecond(){
         minute()
         return;
     }
+    else if(endi==2){ 
+        return;
+    }
+    else{
     souvms=parseInt(souvms)
     souvms=souvms+1
     if (souvms<10){
     souvms=("0"+souvms)}
     document.getElementById('milisecond').innerHTML = souvms;
-    setTimeout(milisecond, 10);
+    if (souvms>9){
+        souvms=0
+        document.getElementById('milisecond').innerHTML = "00";
+        setTimeout(milisecond, 10);
+    }
+    else{
+        setTimeout(milisecond, 10);
+    }
+}
 }
 function second(){
     if(endi==1){
         document.getElementById('second').innerHTML = "00";
         return;
     }
-    souvms=0
-    document.getElementById('milisecond').innerHTML = "00";
+    else if(endi==2){ 
+        return;
+    }
+    else{
     souvs=parseInt(souvs)
     souvs=souvs+1
     if (souvs<10){
     souvs=("0"+souvs)}
     document.getElementById('second').innerHTML = souvs;
-    setTimeout(second, 1000);
+    if (souvs>59){
+        souvs=0
+        document.getElementById('second').innerHTML = "00";
+        setTimeout(second, 1000);
+    }
+    else{
+        setTimeout(second, 1000);
+    }
+}
 }
 function minute(){
     if(endi==1){ 
         document.getElementById('minute').innerHTML = "30";
         return;
     }
-    souvs=0
-    document.getElementById('second').innerHTML = "00";
+    else if(endi==2){ 
+        return;
+    }
+    else{
     souvm=parseInt(souvm)
     souvm=souvm+1
     if (souvm<10){
     souvm=("0"+souvm)}
     document.getElementById('minute').innerHTML = souvm;
     setTimeout(minute, 60000);
+    }
 }
+function gagne(){
+    endi=2
+    return;
+}
+
 function end(){
     endi=1
     return;
 }
+
+function end(){
+    endi=1
+    popUpReplay.style.zIndex = '5';
+    return;
+}
+
+function apparitionPopUpReplay(){
+    
+}
+
 
 buttonPlay.addEventListener('click', button_play);
 buttonPlay.addEventListener('click', afficherTableauFacile);
 buttonPlay.addEventListener('click', afficherTableauMoyen);
 buttonPlay.addEventListener('click', afficherTableauExtreme);
 buttonPlay.addEventListener('click', afficherTableauImpossible);
+imgreplaycroix.addEventListener('click', fermerPopUp);
+
+buttonPlay.addEventListener('click', timer);
