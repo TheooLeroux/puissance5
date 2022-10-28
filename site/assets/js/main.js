@@ -114,6 +114,8 @@ var button_play = function () {
     }else{
         TextError.style.opacity = '1';
     }
+
+    
     
 }
 
@@ -840,7 +842,6 @@ function minute(){
 function gagne(){
     endi=2
     document.getElementById('score_player').innerHTML = score;
-    scorerecup()
     return;
 }
 
