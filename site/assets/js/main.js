@@ -114,7 +114,6 @@ var button_play = function () {
     }else{
         TextError.style.opacity = '1';
     }
-    score()
     
 }
 
@@ -868,3 +867,7 @@ buttonPlay.addEventListener('click', afficherTableauImpossible);
 imgreplaycroix.addEventListener('click', fermerPopUp);
 
 buttonPlay.addEventListener('click', timer);
+
+function apparitionPopUpReplay(){
+    
+}
