@@ -16,16 +16,16 @@
           <a href="https://www.facebook.com/"><img
               src="https://media.discordapp.net/attachments/301039123160891402/1027325507244666951/facebook.png"
               alt=""></a>
-          <a href="https://www.twitter.com/"><img
+          <a href="https://twitter.com/PowerOfMemory2"><img
               src="https://media.discordapp.net/attachments/301039123160891402/1027325509304078406/twitter.png"
               alt=""></a>
-          <a href="https://www.tiktok.com/"><img
+          <a href="https://www.tiktok.com/@powerofmemory?lang=fr"><img
               src="https://media.discordapp.net/attachments/301039123160891402/1027325508670730281/tiktok.png"
               alt=""></a>
-          <a href="https://www.pinterest.com/"><img
+          <a href="https://www.pinterest.fr/powerofmemory2/"><img
               src="https://media.discordapp.net/attachments/301039123160891402/1027325508272259152/pinterest.png"
               alt=""></a>
-          <a href="https://www.instagram.com/"><img
+          <a href="https://www.instagram.com/powerofmemory/?hl=fr"><img
               src="https://media.discordapp.net/attachments/301039123160891402/1027325507617968230/insta.png"
               alt=""></a>
         </p>
